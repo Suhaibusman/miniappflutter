@@ -1,8 +1,7 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class CustomButtonWidget extends StatefulWidget {
+class CustomButtonWidget extends StatelessWidget {
   final String buttonText;
   final void Function() onPressed;
 
@@ -10,32 +9,40 @@ class CustomButtonWidget extends StatefulWidget {
   final double buttonWidth;
   final Color backgroundColor;
   final Color fontColor;
-  final IconData? icondata;
-  const CustomButtonWidget(
-      {super.key, required this.buttonText, required this.onPressed, required this.buttonHeight, required this.buttonWidth, required this.backgroundColor, required this.fontColor, this.icondata,});
+  final String? iconimage;
+  // final IconData? icondata;
+  const CustomButtonWidget({
+    super.key,
+    required this.buttonText,
+    required this.onPressed,
+    required this.buttonHeight,
+    required this.buttonWidth,
+    required this.backgroundColor,
+    required this.fontColor, this.iconimage,
+    // this.icondata,
+  });
 
-  @override
-  State<CustomButtonWidget> createState() => _CustomButtonWidgetState();
-}
-
-class _CustomButtonWidgetState extends State<CustomButtonWidget> {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: widget.onPressed,
-     style: ElevatedButton.styleFrom(
-      elevation: 0,
-      backgroundColor: widget.backgroundColor,
-minimumSize:  Size(widget.buttonWidth, widget.buttonHeight),
-shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(20),
-    ),
-  ),
-      child: Wrap(
-        children: [
-          Text(widget.buttonText ,style:  TextStyle(fontFamily: "OpenSans", fontSize: 16,fontWeight: FontWeight.bold ,color: widget.fontColor),),
-           Icon(widget.icondata!, color: Colors.black,)
-        ],
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        height: buttonHeight,
+        width: buttonWidth,
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(child: Text(buttonText ,style:  TextStyle(fontFamily: "Manrope", fontSize: 16,fontWeight: FontWeight.w600 ,color: fontColor),)),
+             Padding(
+               padding: const EdgeInsets.only(left: 20),
+               child: SvgPicture.asset(iconimage!),
+             )
+          ],
+        ),
       ),
     );
   }

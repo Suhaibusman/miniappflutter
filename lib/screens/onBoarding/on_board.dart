@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:miniapp/screens/onBoarding/widgets/text.dart';
+
 import 'package:miniapp/screens/onBoarding/widgets/topdata.dart';
+import 'package:miniapp/widgets/buttons.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -15,12 +16,19 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-           backgroundColor: Color(0xff2A4BA0),
+    return  Scaffold(
+           backgroundColor: const Color(0xff2A4BA0),
            body: SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TopData()
+                
+                 const TopData(),
+                 SvgPicture.asset("assets/images/Image Icon.svg",height: 129,),
+                 Padding(
+                   padding: const EdgeInsets.only(bottom: 30),
+                   child: CustomButtonWidget(buttonText: "Get Started", onPressed: (){}, buttonHeight: 70, buttonWidth: 253, backgroundColor: const Color(0xffFAFBFD), fontColor: Colors.black, iconimage: "assets/images/Arrow 4.svg",),
+                 )
               ],
             ),
            )
