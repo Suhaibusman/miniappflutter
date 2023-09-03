@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miniapp/screens/home/widgets/bottomnavigation.dart';
+import 'package:miniapp/screens/home/widgets/grocerytop.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,7 +15,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return  const Scaffold(
       body: SafeArea(child: Column(
 
-        children: [],
+        children: [
+          HomeTopData()
+        ],
       )),
       bottomNavigationBar: CustomBottomNavigationBar()
     );
