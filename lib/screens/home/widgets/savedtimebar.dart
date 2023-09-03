@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:miniapp/models/discount_part.dart';
 
-class DiscountBar extends StatefulWidget {
-  const DiscountBar({super.key});
+import 'package:miniapp/models/savedtime_part.dart';
+
+class SavedTimeBar extends StatefulWidget {
+  const SavedTimeBar({super.key});
 
   @override
-  State<DiscountBar> createState() => _DiscountBarState();
+  State<SavedTimeBar> createState() => _SavedTimeBarState();
 }
 
-class _DiscountBarState extends State<DiscountBar> {
-  List<Discountpart> discount = [];
+class _SavedTimeBarState extends State<SavedTimeBar> {
+List<SavedTime> savedTimes=[];
 
-    void _getDiscount() {
+    void _getSavedTime() {
     setState(() {
-      discount = Discountpart.getDiscount();
+      savedTimes = SavedTime.getTime();
     });
   }
 
   @override
   Widget build(BuildContext context) {
-     _getDiscount();
+     _getSavedTime();
     return SizedBox(
       height: 150,
       child: ListView.separated(
@@ -29,43 +29,48 @@ class _DiscountBarState extends State<DiscountBar> {
           itemBuilder: (context, index) {
             return Container(
               height: 123,
-              width: 275,
+              width: 158,
               decoration: BoxDecoration(
-                  color: discount[index].boxColor,
+                  color: savedTimes[index].boxColor,
                   borderRadius: const BorderRadius.all(Radius.circular(20))),
               margin: const EdgeInsets.only(left:10 ,top: 10 ,bottom:10),
-              child: Row(
+              child: Column(
+                // crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 10),
-                    child: SvgPicture.asset("assets/images/Image Icon.svg"),
-                  ),
-                  Column(
+                  
+                  Row(
+                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(discount[index].simplegetText,
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontFamily: "Manrope",
-                              color: Colors.white)),
-                      Text(discount[index].discountpercent,
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20 ,right: 10),
+                        child: Text(savedTimes[index].timeText,
+                            style: const TextStyle(
+                                fontSize: 26,
+                                fontFamily: "Manrope",
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold)),
+                      ),
+                      Text(savedTimes[index].descrptionText,
                           style: const TextStyle(
                               fontSize: 26,
                               fontFamily: "Manrope",
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w200,
                               color: Colors.white)),
-                      Text(discount[index].orderquantity,
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontFamily: "Manrope",
-                              color: Colors.white)),
+                     
                     ],
-                  )
+                  ),
+                   Text(savedTimes[index].description2,
+                          style: const TextStyle(
+                              fontSize: 14,
+                              fontFamily: "Manrope",
+                              color: Colors.black)),
                 ],
               ),
             );
           },
           separatorBuilder: (context, index) => const SizedBox(width: 10),
-          itemCount: discount.length),
+          itemCount: savedTimes.length),
     );
   }
 }
