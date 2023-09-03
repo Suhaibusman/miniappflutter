@@ -34,7 +34,6 @@ class _CategoriesBarState extends State<CategoriesBar> {
                   color: Color(0xffE0E2EE),
                 ),
                 width: 150,
-               
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -48,9 +47,9 @@ class _CategoriesBarState extends State<CategoriesBar> {
                         ),
                       ),
                     ),
-                      const Divider(color: Color(0xffE0E2EE
-
-),),
+                    const Divider(
+                      color: Color(0xffE0E2EE),
+                    ),
                     Text(
                       category[index].simplegetText,
                       style: const TextStyle(
@@ -67,7 +66,6 @@ class _CategoriesBarState extends State<CategoriesBar> {
                         color: Color(0xff616A7D),
                       ),
                     ),
-
                     Center(
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8, top: 10),
@@ -104,6 +102,25 @@ class _CategoriesBarState extends State<CategoriesBar> {
                                   ),
                                 ),
                               ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: InkWell(
+                                  onTap: (){},
+                                  child: Stack(
+                                    children: [
+                                      const CircleAvatar(
+                                        radius: 12,
+                                        backgroundColor: Color(0xff2A4BA0),
+                                      ),
+                                      Positioned(
+                                        left: 6, top: 6,
+                                        child: SvgPicture.asset(
+                                            "assets/images/plus-outline (3) 1.svg"),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              )
                             ],
                           ),
                         ),
