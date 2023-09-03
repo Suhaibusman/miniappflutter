@@ -33,10 +33,11 @@ class _CategoriesBarState extends State<CategoriesBar> {
                   borderRadius: BorderRadius.all(Radius.circular(12)),
                   color: Color(0xffE0E2EE),
                 ),
-                width: 150,
+                width: 130,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+
                     Center(
                       child: Padding(
                         padding: const EdgeInsets.only(top: 15, left: 20),

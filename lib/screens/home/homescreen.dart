@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:miniapp/screens/home/widgets/bottomnavigation.dart';
 import 'package:miniapp/screens/home/widgets/categories.dart';
+import 'package:miniapp/screens/home/widgets/dealscategogeries.dart';
 import 'package:miniapp/screens/home/widgets/discountbar.dart';
 import 'package:miniapp/screens/home/widgets/grocerytop.dart';
 import 'package:miniapp/screens/home/widgets/savedtimebar.dart';
@@ -42,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(fontFamily: "Manrope", fontSize: 30),
                       ),
                     ),
+                    DealsOnFruit(),
                   ],
                 ),
               ),

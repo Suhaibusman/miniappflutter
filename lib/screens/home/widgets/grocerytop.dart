@@ -14,7 +14,7 @@ class _HomeTopDataState extends State<HomeTopData> {
     return Container(
       color: const Color(0xff2A4BA0),
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height*0.4,
+      height: MediaQuery.of(context).size.height*0.3,
       child: Column(
         children: [
           Padding(
