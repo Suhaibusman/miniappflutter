@@ -15,6 +15,13 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
+
+//       bool isLogin =false;
+
+// login() async {
+// isLogin =true;
+// }
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
