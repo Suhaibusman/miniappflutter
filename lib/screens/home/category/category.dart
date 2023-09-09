@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:miniapp/screens/home/category/widgets/categorybody.dart';
 import 'package:miniapp/screens/home/category/widgets/categorytop.dart';
+import 'package:miniapp/screens/home/widgets/bottomnavigation.dart';
 
 class CategoryScreenData extends StatefulWidget {
   const CategoryScreenData({super.key});
@@ -18,8 +19,8 @@ class _CategoryScreenDataState extends State<CategoryScreenData> {
             CategoryTopBar(),
             CategoryData(),
           ],),
-        )
-      
+        ),
+      bottomNavigationBar: NavBar()
     );
   }
 }

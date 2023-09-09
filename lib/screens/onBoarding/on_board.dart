@@ -16,11 +16,7 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
-//       bool isLogin =false;
 
-// login() async {
-// isLogin =true;
-// }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +33,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                    padding: const EdgeInsets.only(bottom: 30),
                    child: CustomButtonWidget(buttonText: "Get Started", onPressed: (){
 
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
+                    setState(() {
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen(),)); 
+                    });
                    }, buttonHeight: 70, buttonWidth: 253, backgroundColor: const Color(0xffFAFBFD), fontColor: Colors.black, iconimage: "assets/images/Arrow 4.svg",),
                  )
               ],

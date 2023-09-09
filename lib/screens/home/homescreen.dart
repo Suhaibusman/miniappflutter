@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:miniapp/screens/home/widgets/bottomnavigation.dart';
 import 'package:miniapp/screens/home/widgets/categories.dart';
 import 'package:miniapp/screens/home/widgets/dealscategogeries.dart';
 import 'package:miniapp/screens/home/widgets/discountbar.dart';
@@ -46,10 +47,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-            )
+            ),
+                NavBar()
+          
           ],
         )),
-            //  bottomNavigationBar: CustomBottomNavigationBar()
+              // bottomNavigationBar: NavBar()
         );
   }
 }

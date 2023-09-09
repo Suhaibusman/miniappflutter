@@ -71,16 +71,13 @@ class _HomeTopDataState extends State<HomeTopData> {
                           fontWeight: FontWeight.bold,
                           color: const Color(0xffF8F9FB).withOpacity(0.5)),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 250),
-                      child: Text(
-                        "WITHIN",
-                        style: TextStyle(
-                            fontFamily: "Manrope",
-                            fontSize: 11,
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xffF8F9FB).withOpacity(0.5)),
-                      ),
+                    Text(
+                      "WITHIN",
+                      style: TextStyle(
+                          fontFamily: "Manrope",
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xffF8F9FB).withOpacity(0.5)),
                     ),
                   ],
                 ),
@@ -103,9 +100,7 @@ class _HomeTopDataState extends State<HomeTopData> {
                 padding: const EdgeInsets.only(left: 5),
                 child: SvgPicture.asset("assets/images/arrow Iocn.svg"),
               ),
-              const SizedBox(
-                width: 150,
-              ),
+             
               const Text(
                 "1 hour",
                 style: TextStyle(
@@ -121,6 +116,9 @@ class _HomeTopDataState extends State<HomeTopData> {
           ),
         ],
       ),
+
+
+      
     );
   }
 }
