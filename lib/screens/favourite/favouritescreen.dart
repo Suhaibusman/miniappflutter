@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:miniapp/screens/home/widgets/bottomnavigation.dart';
+import 'package:miniapp/screens/favourite/model/favouriteitems.dart';
 
 class FavouriteScreenData extends StatefulWidget {
   const FavouriteScreenData({super.key});
@@ -12,12 +12,14 @@ class _FavouriteScreenDataState extends State<FavouriteScreenData> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: SafeArea(child: Column(
-        children: [Container(
-          color: Colors.amber,
-        )],
-      )),
-      bottomNavigationBar: const NavBar(),
+    
+      body: ListView.builder(
+        itemCount: favoriteitems.length,
+        itemBuilder: (context, index) {
+        return const ListTile();
+      },)
+      
+      //  bottomNavigationBar: const CustomBottomNavigationBar(),
     );
   }
 }

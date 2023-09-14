@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CategoryData extends StatefulWidget {
   const CategoryData({super.key});
@@ -44,22 +43,25 @@ void getCategoriesandsubCategoryitems(){
                 decoration: const BoxDecoration(
                     color: Color(0xffE0E2EE),
                     borderRadius: BorderRadius.all(Radius.circular(12))),
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SvgPicture.asset("assets/images/Image Icon.svg", height: 68, width: 68, ),
-                  const Divider(
+                  // Image.asset(categoryData[index]["image"]),
+                  Divider(
                     color: Color.fromARGB(255, 0, 0, 0), //color of divider
                 height: 5, //height spacing of divider
                 thickness: 1, //thickness of divier line
                 indent: 25, //spacing at the start of divider
                 endIndent: 25, //spacing at the end of divider
                   ),
-                  const Text("data", style: TextStyle(fontFamily: "Manrope" ,
+                  //  Text(categoryData[index]["category"], style: const TextStyle(fontFamily: "Manrope" ,
+                  // fontSize: 13 ,fontWeight: FontWeight.w600 ,color: Colors.black),),
+                  Text("data", style: TextStyle(fontFamily: "Manrope" ,
                   fontSize: 13 ,fontWeight: FontWeight.w600 ,color: Colors.black),),
-               const Text("data", style: TextStyle(fontFamily: "Manrope" ,
+                // Text(categoryData[index]["details"], style: const TextStyle(fontFamily: "Manrope" ,
+                //   fontSize: 12 ,fontWeight: FontWeight.w400 ,color: Color(0xff616A7D)),)
+                 Text("category details", style: TextStyle(fontFamily: "Manrope" ,
                   fontSize: 12 ,fontWeight: FontWeight.w400 ,color: Color(0xff616A7D)),)
-                
                 ],
                 
               ),

@@ -106,7 +106,9 @@ class _CategoriesBarState extends State<CategoriesBar> {
                               Padding(
                                 padding: const EdgeInsets.only(left: 10),
                                 child: InkWell(
-                                  onTap: (){},
+                                  onTap: (){
+                                    print("object$index");
+                                  },
                                   child: Stack(
                                     children: [
                                       const CircleAvatar(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:miniapp/screens/home/category/widgets/categorybody.dart';
-import 'package:miniapp/screens/home/category/widgets/categorytop.dart';
+import 'package:miniapp/screens/category/category/widgets/categorybody.dart';
+import 'package:miniapp/screens/category/category/widgets/categorytop.dart';
 import 'package:miniapp/screens/home/widgets/bottomnavigation.dart';
 
 class CategoryScreenData extends StatefulWidget {
@@ -20,7 +20,7 @@ class _CategoryScreenDataState extends State<CategoryScreenData> {
             CategoryData(),
           ],),
         ),
-      bottomNavigationBar: NavBar()
+        bottomNavigationBar: CustomBottomNavigationBar()
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:miniapp/screens/home/widgets/bottomnavigation.dart';
 
 class MoreScreenData extends StatefulWidget {
   const MoreScreenData({super.key});
@@ -11,10 +10,16 @@ class MoreScreenData extends StatefulWidget {
 class _MoreScreenDataState extends State<MoreScreenData> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-
-      body: SafeArea(child: Column(children: [],)),
-     bottomNavigationBar:  NavBar(),
+    return Scaffold(
+      body: SafeArea(child: Container(
+        color: const Color.fromARGB(255, 255, 72, 0),
+        height: double.infinity,
+        width: double.infinity,
+        child: const Center(
+         child: Text("More")
+        ),
+      )),
+      //  bottomNavigationBar: const CustomBottomNavigationBar(),
     );
   }
 }

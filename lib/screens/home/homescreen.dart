@@ -48,11 +48,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-                NavBar()
+                // NavBar()
           
           ],
         )),
-              // bottomNavigationBar: NavBar()
+                bottomNavigationBar: CustomBottomNavigationBar()
         );
   }
 }
