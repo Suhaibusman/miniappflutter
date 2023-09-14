@@ -21,11 +21,9 @@ CategoryData({
    required this.subcategoryprice
    
 });
+}
 
-
- List<Map<String, dynamic>> getCategoryData(){
-
-  List<Map<String, dynamic>> categoryData = [
+ List<Map<String, dynamic>> categoryData = [
  {
     'category': "McDonalsds",
     'image': "assets/images/CategoryandSub/categoryimages/icons8-part-alternation-mark-68.png",
@@ -144,11 +142,3 @@ CategoryData({
   },
 
  ];
-
-
-
-    
- return categoryData;
-}
-
-}

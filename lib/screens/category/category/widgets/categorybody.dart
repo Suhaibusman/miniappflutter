@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:miniapp/screens/category/category/models/category_items.dart';
 
 class CategoryData extends StatefulWidget {
   const CategoryData({super.key});
@@ -8,7 +9,7 @@ class CategoryData extends StatefulWidget {
 }
 
 class _CategoryDataState extends State<CategoryData> {
-    List<Map<String, dynamic>> categoryData = [
+    List<Map<String, dynamic>> customcategoryData = [
   {
     
   }
@@ -43,24 +44,24 @@ void getCategoriesandsubCategoryitems(){
                 decoration: const BoxDecoration(
                     color: Color(0xffE0E2EE),
                     borderRadius: BorderRadius.all(Radius.circular(12))),
-              child: const Column(
+              child:  Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // Image.asset(categoryData[index]["image"]),
-                  Divider(
+                  const Divider(
                     color: Color.fromARGB(255, 0, 0, 0), //color of divider
                 height: 5, //height spacing of divider
                 thickness: 1, //thickness of divier line
                 indent: 25, //spacing at the start of divider
                 endIndent: 25, //spacing at the end of divider
                   ),
-                  //  Text(categoryData[index]["category"], style: const TextStyle(fontFamily: "Manrope" ,
+                    Text(categoryData[index]["category"], style: const TextStyle(fontFamily: "Manrope" ,
+                   fontSize: 13 ,fontWeight: FontWeight.w600 ,color: Colors.black),),
+                  // Text("data", style: TextStyle(fontFamily: "Manrope" ,
                   // fontSize: 13 ,fontWeight: FontWeight.w600 ,color: Colors.black),),
-                  Text("data", style: TextStyle(fontFamily: "Manrope" ,
-                  fontSize: 13 ,fontWeight: FontWeight.w600 ,color: Colors.black),),
                 // Text(categoryData[index]["details"], style: const TextStyle(fontFamily: "Manrope" ,
                 //   fontSize: 12 ,fontWeight: FontWeight.w400 ,color: Color(0xff616A7D)),)
-                 Text("category details", style: TextStyle(fontFamily: "Manrope" ,
+                 const Text("category details", style: TextStyle(fontFamily: "Manrope" ,
                   fontSize: 12 ,fontWeight: FontWeight.w400 ,color: Color(0xff616A7D)),)
                 ],
                 

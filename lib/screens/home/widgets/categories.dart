@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:miniapp/models/categories_part.dart';
+import 'package:miniapp/screens/more/widgets/addtocart.dart';
 
 class CategoriesBar extends StatefulWidget {
   const CategoriesBar({super.key});
@@ -107,7 +108,7 @@ class _CategoriesBarState extends State<CategoriesBar> {
                                 padding: const EdgeInsets.only(left: 10),
                                 child: InkWell(
                                   onTap: (){
-                                    print("object$index");
+                                    addtocart.add(category[index]);
                                   },
                                   child: Stack(
                                     children: [

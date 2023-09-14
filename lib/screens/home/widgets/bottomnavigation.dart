@@ -56,6 +56,9 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
              }else  if(index ==1){
               Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoryScreenData(),));
              currentindex =index;
+             }else  if(index ==3){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const MoreScreenData(),));
+             currentindex =index;
              }
           });
         },
