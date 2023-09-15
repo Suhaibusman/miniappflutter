@@ -36,18 +36,23 @@ void getCategoriesandsubCategoryitems(){
                 const EdgeInsets.only(left: 20, top: 20, bottom: 20, right: 20),
             child: InkWell(
                 onTap: () {
-                  // print(categoryData[0]["category"]["categoryName"]);
+                  // print(categoryData[index]);
+                  // Navigator.push(context, MaterialPageRoute(builder:  (context) => const CategoryBody02(),));
+
                 },
               child: Container(
-                height: 164,
-                width: 154,
+                height: 304,
+                width: 304,
                 decoration: const BoxDecoration(
                     color: Color(0xffE0E2EE),
                     borderRadius: BorderRadius.all(Radius.circular(12))),
               child:  Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                 mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Image.asset(categoryData[index]["image"]),
+                       Image.asset(categoryData[index]["image"], height: 68,width: 68,),
+
+                     
                   const Divider(
                     color: Color.fromARGB(255, 0, 0, 0), //color of divider
                 height: 5, //height spacing of divider
@@ -57,12 +62,10 @@ void getCategoriesandsubCategoryitems(){
                   ),
                     Text(categoryData[index]["category"], style: const TextStyle(fontFamily: "Manrope" ,
                    fontSize: 13 ,fontWeight: FontWeight.w600 ,color: Colors.black),),
-                  // Text("data", style: TextStyle(fontFamily: "Manrope" ,
-                  // fontSize: 13 ,fontWeight: FontWeight.w600 ,color: Colors.black),),
-                // Text(categoryData[index]["details"], style: const TextStyle(fontFamily: "Manrope" ,
-                //   fontSize: 12 ,fontWeight: FontWeight.w400 ,color: Color(0xff616A7D)),)
-                 const Text("category details", style: TextStyle(fontFamily: "Manrope" ,
+              
+                Text(categoryData[index]["details"], style: const TextStyle(fontFamily: "Manrope" ,
                   fontSize: 12 ,fontWeight: FontWeight.w400 ,color: Color(0xff616A7D)),)
+              
                 ],
                 
               ),

@@ -25,7 +25,7 @@ CategoryData({
 
  List<Map<String, dynamic>> categoryData = [
  {
-    'category': "McDonalsds",
+    'category': "McDonalds",
     'image': "assets/images/CategoryandSub/categoryimages/icons8-part-alternation-mark-68.png",
     'details': "Karachi",
     'subcategories': [
@@ -114,6 +114,122 @@ CategoryData({
               ],
               "price" : "\$6",
               "name": "Kfc Burger"
+              }
+            ] ,
+            "lowprice" :[ {"image" : [
+                "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-68.png"
+              ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
+              "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
+              ] ,
+              "price" : "\$3",
+              "name": "burger"
+              }],
+            "bigdeals" :[ {"image" : [
+                "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-68.png"
+              ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
+              "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
+              ],
+              "price" :"\$2",
+              "name": "mini burger"
+              }]
+          }
+        ],
+        
+      },
+    
+      // Add more subcategories for 'Fish'...
+    ],
+  },
+   {
+    'category': "Subway",
+    'image': "assets/images/CategoryandSub/categoryimages/icons8-part-alternation-mark-68.png",
+    'details': "Karachi",
+    'subcategories': [
+      {
+        'subcategory': [
+          {
+            "popular": [
+              {"images" : [
+                "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-68.png"
+              ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
+              "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
+              ],
+              "price" : "\$6",
+              "name": "Mc Donalds Burger"
+              } ,
+              {"images" : [
+                "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-68.png"
+              ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
+              "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
+              ],
+              "price" : "\$6",
+              "name": "Mc Donalds Burger"
+              },
+              {"images" : [
+                "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-68.png"
+              ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
+              "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
+              ],
+              "price" : "\$6",
+              "name": "Mc Donalds Burger"
+              }
+            ] ,
+            "lowprice" :[ {"image" : [
+                "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-68.png"
+              ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
+              "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
+              ] ,
+              "price" : "\$3",
+              "name": "burger"
+              }],
+            "bigdeals" :[ {"image" : [
+                "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-68.png"
+              ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
+              "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
+              ],
+              "price" :"\$2",
+              "name": "mini burger"
+              }]
+          }
+        ],
+        
+      },
+    
+      // Add more subcategories for 'Fish'...
+    ],
+  },
+   {
+    'category': "Pizza",
+    'image': "assets/images/CategoryandSub/categoryimages/icons8-part-alternation-mark-68.png",
+    'details': "Karachi",
+    'subcategories': [
+      {
+        'subcategory': [
+          {
+            "popular": [
+              {"images" : [
+                "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-68.png"
+              ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
+              "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
+              ],
+              "price" : "\$6",
+              "name": "Mc Donalds Burger"
+              } ,
+              {"images" : [
+                "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-68.png"
+              ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
+              "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
+              ],
+              "price" : "\$6",
+              "name": "Mc Donalds Burger"
+              },
+              {"images" : [
+                "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-68.png"
+              ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
+              "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
+              ],
+              "price" : "\$6",
+              "name": "Mc Donalds Burger"
               }
             ] ,
             "lowprice" :[ {"image" : [

@@ -20,7 +20,7 @@ class _CategoryScreenDataState extends State<CategoryScreenData> {
             CategoryData(),
           ],),
         ),
-        bottomNavigationBar: CustomBottomNavigationBar()
+        bottomNavigationBar: CustomBottomNavigationBar(pageindex: 1,)
     );
   }
 }

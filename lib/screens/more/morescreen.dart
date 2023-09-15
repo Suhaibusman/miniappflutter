@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:miniapp/screens/home/widgets/bottomnavigation.dart';
 
 class MoreScreenData extends StatefulWidget {
   const MoreScreenData({super.key});
@@ -19,7 +20,7 @@ class _MoreScreenDataState extends State<MoreScreenData> {
          child: Text("More")
         ),
       )),
-      //  bottomNavigationBar: const CustomBottomNavigationBar(),
+        bottomNavigationBar: const CustomBottomNavigationBar(pageindex: 4),
     );
   }
 }

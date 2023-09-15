@@ -6,7 +6,8 @@ import 'package:miniapp/screens/home/homescreen.dart';
 import 'package:miniapp/screens/more/morescreen.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
-  const CustomBottomNavigationBar({super.key});
+  final int pageindex;
+  const CustomBottomNavigationBar({super.key, required this.pageindex,  });
 
   @override
   State<CustomBottomNavigationBar> createState() => _CustomBottomNavigationBarState();
@@ -62,7 +63,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
              }
           });
         },
- letIndexChange: (index) => true,
+ letIndexChange: (pageindex) => true,
       );
      
     
