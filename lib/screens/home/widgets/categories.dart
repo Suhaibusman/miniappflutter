@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:miniapp/models/categories_part.dart';
-import 'package:miniapp/screens/more/widgets/addtocart.dart';
+import 'package:miniapp/screens/category/category/widgets/category2/category2.dart';
 
 class CategoriesBar extends StatefulWidget {
   const CategoriesBar({super.key});
@@ -108,7 +108,7 @@ class _CategoriesBarState extends State<CategoriesBar> {
                                 padding: const EdgeInsets.only(left: 10),
                                 child: InkWell(
                                   onTap: (){
-                                    addtocart.add(category[index]);
+                                   Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoriesItemsScreen(),));
                                   },
                                   child: Stack(
                                     children: [

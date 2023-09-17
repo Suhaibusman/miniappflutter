@@ -62,6 +62,7 @@ class _HomeTopDataState extends State<HomeTopData> {
               Padding(
                 padding: const EdgeInsets.only(top: 30, left: 20),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
                       "DELIVERY TO",
