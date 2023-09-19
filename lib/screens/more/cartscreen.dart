@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:miniapp/screens/more/widgets/addtocart.dart';
 
 class CartScreenData extends StatefulWidget {
   const CartScreenData({super.key});
@@ -12,7 +10,7 @@ class CartScreenData extends StatefulWidget {
 class _CartScreenDataState extends State<CartScreenData> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
 
       body: Column(
         children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:miniapp/screens/category/category/models/categorydata.dart';
 
 class CategoriesItemsScreen extends StatefulWidget {
   const CategoriesItemsScreen({super.key});
@@ -9,10 +10,25 @@ class CategoriesItemsScreen extends StatefulWidget {
 }
 
 class _CategoriesItemsScreenState extends State<CategoriesItemsScreen> {
+  void getCategoriesandsubCategoryitems(){
+  setState(() {
+      itemsdatanew =itemsdatanew;
+  });
+}
+  int? value =1;
+   List dataList = [
+"Popular",
+"Big Deals",
+"Low Price"
+
+];
+
   @override
   Widget build(BuildContext context) {
+     getCategoriesandsubCategoryitems();
     return Scaffold(
-      body: SafeArea(child: Column(
+      body: SafeArea(
+        child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -28,9 +44,73 @@ class _CategoriesItemsScreenState extends State<CategoriesItemsScreen> {
 
            
             ],
-          )
-        ],
-      )),
-    );
+          ),
+                   SizedBox(
+                    height: 30,
+                     child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                         itemCount: dataList.length,
+                         itemBuilder: (BuildContext context, int index) {
+                           return ChoiceChip(
+                             label: Text(dataList[index]),
+                             selected: value == index,
+                             selectedColor: Colors.amber,
+                             selectedShadowColor: Colors.red,
+                             onSelected: (bool _value) {
+                               setState(() {
+                                 value = _value ? index : null;
+                               });
+                             },
+                             backgroundColor: Colors.blue,
+                             labelStyle: const TextStyle(color: Colors.white),
+                           );
+                         },
+                           
+                           
+                         ),
+
+
+                   ),
+                   Expanded(
+                     child: GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), 
+                     itemCount: itemsdatanew.length,
+                     itemBuilder: (context, index) {
+                       return Container(
+                                   height: 304,
+                                   width: 304,
+                                   decoration: const BoxDecoration(
+                      color: Color(0xffE0E2EE),
+                      borderRadius: BorderRadius.all(Radius.circular(12))),
+                                 child:  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                   mainAxisSize: MainAxisSize.min,
+                                   children: [
+                         Image.asset(itemsdatanew[index]["image"][0], height: 68,width: 68,),
+                   
+                       
+                                     const Divider(
+                      color: Color.fromARGB(255, 0, 0, 0), //color of divider
+                                   height: 5, //height spacing of divider
+                                   thickness: 1, //thickness of divier line
+                                   indent: 25, //spacing at the start of divider
+                                   endIndent: 25, //spacing at the end of divider
+                                     ),
+                      Text(itemsdatanew[index]["name"], style: const TextStyle(fontFamily: "Manrope" ,
+                     fontSize: 13 ,fontWeight: FontWeight.w600 ,color: Colors.black),),
+                                 
+                                   Text(itemsdatanew[index]["price"], style: const TextStyle(fontFamily: "Manrope" ,
+                                     fontSize: 12 ,fontWeight: FontWeight.w400 ,color: Color(0xff616A7D)),)
+                                 
+                                   ],
+                                   
+                                 ),
+                         
+                                 );
+                     },),
+                   )
+                   
+                   ]),
+    ));
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:miniapp/screens/category/category/models/category_items.dart';
 
+import 'category2/category2.dart';
+
 class CategoryData extends StatefulWidget {
   const CategoryData({super.key});
 
@@ -9,12 +11,7 @@ class CategoryData extends StatefulWidget {
 }
 
 class _CategoryDataState extends State<CategoryData> {
-    List<Map<String, dynamic>> customcategoryData = [
-  {
-    
-  }
 
-];
 void getCategoriesandsubCategoryitems(){
   setState(() {
       categoryData =categoryData;
@@ -37,7 +34,7 @@ void getCategoriesandsubCategoryitems(){
             child: InkWell(
                 onTap: () {
                   // print(categoryData[index]);
-                  // Navigator.push(context, MaterialPageRoute(builder:  (context) => const CategoryBody02(),));
+                  Navigator.push(context, MaterialPageRoute(builder:  (context) => const CategoriesItemsScreen(),));
 
                 },
               child: Container(
