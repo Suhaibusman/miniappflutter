@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:miniapp/screens/category/category/models/categorydata.dart';
+import 'package:miniapp/screens/category/category/widgets/category2/catitems.dart';
 
 class CategoriesItemsScreen extends StatefulWidget {
   const CategoriesItemsScreen({super.key});
@@ -10,12 +11,6 @@ class CategoriesItemsScreen extends StatefulWidget {
 }
 
 class _CategoriesItemsScreenState extends State<CategoriesItemsScreen> {
-  void getCategoriesandsubCategoryitems(){
-  setState(() {
-      itemsdatanew =itemsdatanew;
-  });
-}
-  int? value =1;
    List dataList = [
 "Popular",
 "Big Deals",
@@ -23,6 +18,17 @@ class _CategoriesItemsScreenState extends State<CategoriesItemsScreen> {
 
 ];
 
+  int? value =1;
+
+  void getCategoriesandsubCategoryitems(){
+  setState(() {
+      itemsdatanew =itemsdatanew;
+  });
+}
+void navigatetoitemdetails(int index){
+
+Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemsDetailsPage(),));
+}
   @override
   Widget build(BuildContext context) {
      getCategoriesandsubCategoryitems();
@@ -33,8 +39,11 @@ class _CategoriesItemsScreenState extends State<CategoriesItemsScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SvgPicture.asset("assets/images/Group 73.svg"
-              ,height: 40 ,width: 40,
+              InkWell(
+                onTap: () => Navigator.pop,
+                child: SvgPicture.asset("assets/images/Group 73.svg"
+                ,height: 40 ,width: 40,
+                ),
               ),
               const Text("Items" ,style: TextStyle(fontFamily: "Manrope" ,fontSize: 16,fontWeight: FontWeight.w400),),
               SvgPicture.asset("assets/images/Search Icon.svg" ,colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
@@ -76,37 +85,59 @@ class _CategoriesItemsScreenState extends State<CategoriesItemsScreen> {
                      child: GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), 
                      itemCount: itemsdatanew.length,
                      itemBuilder: (context, index) {
-                       return Container(
-                                   height: 304,
-                                   width: 304,
-                                   decoration: const BoxDecoration(
-                      color: Color(0xffE0E2EE),
-                      borderRadius: BorderRadius.all(Radius.circular(12))),
-                                 child:  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                   mainAxisSize: MainAxisSize.min,
+                       return Padding(
+                         padding: const EdgeInsets.all(20),
+                         child: InkWell(
+                          onTap: () => navigatetoitemdetails(index),
+                           child: Container(
+                                       height: 304,
+                                       width: 304,
+                                       decoration: const BoxDecoration(
+                                               color: Color(0xffE0E2EE),
+                                               borderRadius: BorderRadius.all(Radius.circular(12))),
+                                     child:  Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                       mainAxisSize: MainAxisSize.min,
+                                       children: [
+                             Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                               children: [
+                                 Image.asset(itemsdatanew[index]["image"][2], height: 68,width: 68,),
+                                 Column(
                                    children: [
-                         Image.asset(itemsdatanew[index]["image"][0], height: 68,width: 68,),
-                   
-                       
-                                     const Divider(
-                      color: Color.fromARGB(255, 0, 0, 0), //color of divider
-                                   height: 5, //height spacing of divider
-                                   thickness: 1, //thickness of divier line
-                                   indent: 25, //spacing at the start of divider
-                                   endIndent: 25, //spacing at the end of divider
-                                     ),
-                      Text(itemsdatanew[index]["name"], style: const TextStyle(fontFamily: "Manrope" ,
-                     fontSize: 13 ,fontWeight: FontWeight.w600 ,color: Colors.black),),
-                                 
-                                   Text(itemsdatanew[index]["price"], style: const TextStyle(fontFamily: "Manrope" ,
-                                     fontSize: 12 ,fontWeight: FontWeight.w400 ,color: Color(0xff616A7D)),)
-                                 
+                                      const Icon(Icons.favorite_rounded ,
+                                      color: Colors.grey,)
+                                    , InkWell(
+                                      onTap: () {
+                                        
+                                      },
+                                      child: SvgPicture.asset("assets/images/add.svg")),
                                    ],
-                                   
-                                 ),
-                         
-                                 );
+                                 )
+                               ],
+                             ),
+                                            
+                           
+                                         const Divider(
+                                               color: Color.fromARGB(255, 0, 0, 0), //color of divider
+                                       height: 5, //height spacing of divider
+                                       thickness: 1, //thickness of divier line
+                                       indent: 25, //spacing at the start of divider
+                                       endIndent: 25, //spacing at the end of divider
+                                         ),
+                                               Text(itemsdatanew[index]["name"], style: const TextStyle(fontFamily: "Manrope" ,
+                                              fontSize: 13 ,fontWeight: FontWeight.w600 ,color: Colors.black),),
+                                     
+                                       Text(itemsdatanew[index]["price"], style: const TextStyle(fontFamily: "Manrope" ,
+                                         fontSize: 12 ,fontWeight: FontWeight.w400 ,color: Color(0xff616A7D)),)
+                                     
+                                       ],
+                                       
+                                     ),
+                             
+                                     ),
+                         ),
+                       );
                      },),
                    )
                    

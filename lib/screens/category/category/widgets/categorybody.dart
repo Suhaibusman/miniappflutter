@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:miniapp/Data/addtocartlist.dart';
 import 'package:miniapp/screens/category/category/models/category_items.dart';
 
 import 'category2/category2.dart';
@@ -17,6 +18,10 @@ void getCategoriesandsubCategoryitems(){
       categoryData =categoryData;
   });
 }
+
+void addtoCart(int index){
+  addtoCartitems.add(index);
+}
   @override
   Widget build(BuildContext context) {
     getCategoriesandsubCategoryitems();
@@ -32,11 +37,11 @@ void getCategoriesandsubCategoryitems(){
             padding:
                 const EdgeInsets.only(left: 20, top: 20, bottom: 20, right: 20),
             child: InkWell(
-                onTap: () {
-                  // print(categoryData[index]);
-                  Navigator.push(context, MaterialPageRoute(builder:  (context) => const CategoriesItemsScreen(),));
-
+                onTap: () { addtoCart(index);
+                
+                print(addtoCartitems);
                 },
+                
               child: Container(
                 height: 304,
                 width: 304,
