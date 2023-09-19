@@ -27,7 +27,11 @@ class _CategoriesItemsScreenState extends State<CategoriesItemsScreen> {
 }
 void navigatetoitemdetails(int index){
 
-Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemsDetailsPage(),));
+Navigator.push(context, MaterialPageRoute(builder: (context) =>
+
+  ItemsDetailsPage( itemdeatils: Itemsdatanew(itemname: itemsdatanew[index]["name"], categoryDetails: itemsdatanew[index]["details"], itemprice: itemsdatanew[index]["price"], itemimages: itemsdatanew[index]["image"], reviews: itemsdatanew[index]["reviews"], isFav: itemsdatanew[index]["isFav"])),
+ 
+),);
 }
   @override
   Widget build(BuildContext context) {
@@ -40,7 +44,7 @@ Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemsDetai
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               InkWell(
-                onTap: () => Navigator.pop,
+                onTap: () => Navigator.pop(context),
                 child: SvgPicture.asset("assets/images/Group 73.svg"
                 ,height: 40 ,width: 40,
                 ),
@@ -105,11 +109,19 @@ Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemsDetai
                                  Image.asset(itemsdatanew[index]["image"][2], height: 68,width: 68,),
                                  Column(
                                    children: [
-                                      const Icon(Icons.favorite_rounded ,
-                                      color: Colors.grey,)
+                                      IconButton(onPressed: (){
+                                         setState(() {
+                                          if (itemsdatanew[index]["isFav"]==true) {
+                                            itemsdatanew[index]["isFav"]=false;
+                                          } else {
+                                            itemsdatanew[index]["isFav"]=true;
+                                          }
+                                        });
+                                      }, icon:  Icon(Icons.favorite_rounded ,
+                                      color: itemsdatanew[index]["isFav"]==true ?const Color.fromARGB(255, 250, 0, 0) :Colors.grey,))
                                     , InkWell(
                                       onTap: () {
-                                        
+                                       
                                       },
                                       child: SvgPicture.asset("assets/images/add.svg")),
                                    ],

@@ -32,6 +32,7 @@ class CustomButtonWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: const BorderRadius.all(Radius.circular(20)),
+          
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -39,7 +40,7 @@ class CustomButtonWidget extends StatelessWidget {
             Center(child: Text(buttonText ,style:  TextStyle(fontFamily: "Manrope", fontSize: 16,fontWeight: FontWeight.w600 ,color: fontColor),)),
              Padding(
                padding: const EdgeInsets.only(left: 20),
-               child: SvgPicture.asset(iconimage!),
+                child: SvgPicture.asset(iconimage! ,height: 20,width: 20,),
              )
           ],
         ),
