@@ -57,9 +57,9 @@ class _CategoriesItemsScreenState extends State<CategoriesItemsScreen> {
                              selected: value == index,
                              selectedColor: Colors.amber,
                              selectedShadowColor: Colors.red,
-                             onSelected: (bool _value) {
+                             onSelected: (bool keyvalue) {
                                setState(() {
-                                 value = _value ? index : null;
+                                 value = keyvalue ? index : null;
                                });
                              },
                              backgroundColor: Colors.blue,
