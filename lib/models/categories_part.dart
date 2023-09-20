@@ -22,17 +22,17 @@ static List<Categorypart> getCategorypart(){
 
   category.add(
 
-    Categorypart(simplegetText: "Fresh Lemon", categoryPrice: "12\$", orderdetails: "Organic", iconpath: "assets/images/LemonLores.svg",quantity: 1)
+    Categorypart(simplegetText: "Fresh Lemon", categoryPrice: "12\$", orderdetails: "Organic", iconpath: "assets/images/lemon.png",quantity: 1)
   );
 
    category.add(
 
-    Categorypart(simplegetText: "Green Tea", categoryPrice: "06\$", orderdetails: "Organic", iconpath: "assets/images/Green_tea_sachet.svg",quantity: 1)
+    Categorypart(simplegetText: "Green Tea", categoryPrice: "06\$", orderdetails: "Organic", iconpath: "assets/images/greentea.png",quantity: 1)
   );
 
   category.add(
 
-    Categorypart(simplegetText: "Fresh Fish", categoryPrice: "16\$", orderdetails: "Organic", iconpath: "assets/images/fish-line-art.svg",quantity: 1)
+    Categorypart(simplegetText: "Fresh Fish", categoryPrice: "16\$", orderdetails: "Organic", iconpath: "assets/images/fish.png",quantity: 1)
   );
     
  return category;

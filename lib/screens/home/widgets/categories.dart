@@ -55,7 +55,7 @@ class _CategoriesBarState extends State<CategoriesBar> {
                     Center(
                       child: Padding(
                         padding: const EdgeInsets.only(top: 15, left: 20),
-                        child: SvgPicture.asset(
+                        child: Image.asset(
                           category[index].iconpath,
                           height: 50,
                           width: 50,

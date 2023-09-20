@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:miniapp/Data/addtocartlist.dart';
 import 'package:miniapp/models/deals_part.dart';
 
 class DealsOnFruit extends StatefulWidget {
@@ -16,6 +17,10 @@ class _DealsOnFruitState extends State<DealsOnFruit> {
       deals = DealsPart.getDeals();
     });
   }
+
+  void addtocart(int index){
+    addtoCartitems.add(AddedItems(price: deals[index].price, name: deals[index].description, quantity: deals[index].quantity, iconpath: deals[index].iconpath));
+  }
   @override
   Widget build(BuildContext context) {
 _getDeals();
@@ -31,24 +36,29 @@ _getDeals();
                 color: Color(0xffE0E2EE),
               ),
               width: 167,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 40),
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 30,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(50.0),
-                        child: SvgPicture.asset(deals[index].iconpath,height: 68, width: 68,),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10 ,right: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          radius: 30,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(50.0),
+                            child: Image.asset(deals[index].iconpath,height: 68, width: 68,),
+                            ),
                         ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 120),
-                    child: Stack(
+                        const SizedBox(width: 20,),
+                        Column(
+                          children: [ 
+                             
+                            
+                            Stack(
                                       children: [
                                         const CircleAvatar(
                                           radius: 12,
@@ -61,23 +71,41 @@ _getDeals();
                                         )
                                       ],
                                     ),
-                  ),
-                                  Text(deals[index].price ,style: const TextStyle(
-                                    fontFamily: "Manrope" ,fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black
-                                  ),) ,
-                                   Text(deals[index].description ,style: const TextStyle(
-                                    fontFamily: "Manrope" ,fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color(0xff616A7D)
-                                  ),),
-                                  Text(deals[index].description2 ,style: const TextStyle(
-                                    fontFamily: "Manrope" ,fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                    color: Color(0xff616A7D)
-                                  ),)
-                ],
+                                    IconButton(
+                              
+                              onPressed: (){
+                                         setState(() {
+                                          if (deals[index].isFav==true) {
+                                            deals[index].isFav=false;
+                                          } else {
+                                            deals[index].isFav=true;
+                                          }
+                                        });
+                                      }, icon:  Icon(Icons.favorite_rounded ,
+                                      color: deals[index].isFav==true ?const Color.fromARGB(255, 250, 0, 0) :Colors.grey,))
+                                    ,
+                                    ],
+                        )
+                      ],
+                    ),
+                   
+                                    Text(deals[index].price ,style: const TextStyle(
+                                      fontFamily: "Manrope" ,fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black
+                                    ),) ,
+                                     Text(deals[index].description ,style: const TextStyle(
+                                      fontFamily: "Manrope" ,fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xff616A7D)
+                                    ),),
+                                    Text(deals[index].description2 ,style: const TextStyle(
+                                      fontFamily: "Manrope" ,fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xff616A7D)
+                                    ),)
+                  ],
+                ),
               )
             );
           },

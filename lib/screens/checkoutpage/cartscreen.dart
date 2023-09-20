@@ -87,10 +87,10 @@ class _CartScreenDataState extends State<CartScreenData> {
                   child: Column(
                     children: [
                       ListTile(
-                        leading: const CircleAvatar(
+                        leading:  CircleAvatar(
                           radius: 25,
                           backgroundColor: Colors.amber,
-                          // child: Image.asset(addtoCartitems[index].iconpath),
+                           child: Image.asset(addtoCartitems[index].iconpath),
                         ),
                         title: Text(addtoCartitems[index].name ,style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),),
                         subtitle: Text(addtoCartitems[index].price ,style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.w400),),
