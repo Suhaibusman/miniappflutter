@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:miniapp/Data/addtocartlist.dart';
 import 'package:miniapp/models/categories_part.dart';
 
-import '../../category/widgets/category2/category2.dart';
 
 
 class CategoriesBar extends StatefulWidget {
@@ -19,7 +19,18 @@ class _CategoriesBarState extends State<CategoriesBar> {
       category = Categorypart.getCategorypart();
     });
   }
+  void addtoCart(int index){
+  addtoCartitems.add(AddedItems(price: category[index].categoryPrice, name: category[index].simplegetText, quantity: category[index].quantity, iconpath: category[index].iconpath));
+}
 
+  void removeDuplicasy(index){
+     if (category[index].simplegetText==addtoCartitems[index].name ) {
+                                    print("object");
+                                  } else {
+                                    
+                                   addtoCart(index);
+                                  }
+  }
   @override
   Widget build(BuildContext context) {
     _getCategories();
@@ -108,9 +119,11 @@ class _CategoriesBarState extends State<CategoriesBar> {
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 10),
-                                child: InkWell(
+                                child: GestureDetector(
                                   onTap: (){
-                                   Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoriesItemsScreen(),));
+                                 
+                                  removeDuplicasy(index);
+                                   
                                   },
                                   child: Stack(
                                     children: [

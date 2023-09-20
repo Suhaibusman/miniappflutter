@@ -1,8 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:miniapp/screens/checkoutpage/cartscreen.dart';
 import 'package:miniapp/screens/favourite/favouritescreen.dart';
 import 'package:miniapp/screens/home/homescreen.dart';
-import 'package:miniapp/screens/more/morescreen.dart';
+
 
 import '../../category/category.dart';
 
@@ -28,7 +29,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     const HomeScreen(),
     const CategoryScreenData(),
     const FavouriteScreenData(),
-    const MoreScreenData(),
+    const CartScreenData(),
   ];
 
 
@@ -59,7 +60,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoryScreenData(),));
              currentindex =index;
              }else  if(index ==3){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const MoreScreenData(),));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),));
              currentindex =index;
              }
           });

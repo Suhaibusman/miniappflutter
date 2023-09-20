@@ -28,6 +28,7 @@ CategoryData({
     'category': "McDonalds",
     'image': "assets/images/CategoryandSub/categoryimages/icons8-part-alternation-mark-68.png",
     'details': "Karachi",
+    
     'subcategories': [
       {
         'subcategory': [

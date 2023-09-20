@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:miniapp/screens/category/models/categorydata.dart';
 import 'package:miniapp/widgets/buttons.dart';
 
-import '../../models/categorydata.dart';
 
 class ItemsDetailsPage extends StatefulWidget {
   const ItemsDetailsPage({

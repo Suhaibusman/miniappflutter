@@ -28,11 +28,14 @@ Itemsdatanew({
 }
 
  List<Map<String, dynamic>> itemsdatanew = [
+
+  
    {
              
               
               "price" : "\$9",
               "name": "Burger Tonight" ,
+              "quantity":1,
               "image":  [
                 "assets/images/CategoryandSub/subcategoryimages/mcdonalds/burger.png"
               ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
@@ -46,6 +49,7 @@ Itemsdatanew({
               "reviews":"110",
               "price" : "\$3",
               "name": "Mighty burger" ,
+               "quantity":1,
               "image":  [
                 "assets/images/CategoryandSub/subcategoryimages/mcdonalds/burger.png"
               ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
@@ -56,7 +60,7 @@ Itemsdatanew({
               } ,
                  {
              "reviews":"110",
-              
+               "quantity":1,
               "price" : "\$5",
               "name": "Subway Burger" ,
               "image":  [
@@ -68,7 +72,7 @@ Itemsdatanew({
               "details":"Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo."
               } ,
                  {
-             
+              "quantity":1,
               "reviews":"110",
               "price" : "\$8",
               "name": "KFC Burger" ,

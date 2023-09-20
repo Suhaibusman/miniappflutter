@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:miniapp/screens/category/category/models/categorydata.dart';
-import 'package:miniapp/screens/category/category/widgets/category2/catitems.dart';
+import 'package:miniapp/Data/addtocartlist.dart';
+
+import 'package:miniapp/screens/category/category2/catitems.dart';
+import 'package:miniapp/screens/category/models/categorydata.dart';
+import 'package:miniapp/screens/checkoutpage/cartscreen.dart';
 
 class CategoriesItemsScreen extends StatefulWidget {
   const CategoriesItemsScreen({super.key});
@@ -33,6 +36,9 @@ Navigator.push(context, MaterialPageRoute(builder: (context) =>
  
 ),);
 }
+  void addtoCartitemss(int index){
+  addtoCartitems.add(AddedItems(price: itemsdatanew[index]["price"], name: itemsdatanew[index]["name"], quantity: itemsdatanew[index]["quantity"], iconpath: itemsdatanew[index]["image"][2]));
+}
   @override
   Widget build(BuildContext context) {
      getCategoriesandsubCategoryitems();
@@ -55,7 +61,11 @@ Navigator.push(context, MaterialPageRoute(builder: (context) =>
               SvgPicture.asset("assets/images/Search Icon.svg" ,colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
               // ,height: 18 ,width:  18,
               ),
-              SvgPicture.asset("assets/images/Cart Icon.svg" ,height: 24 ,width: 24,),
+              GestureDetector(
+                onTap:(){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),));
+                } ,
+                child: SvgPicture.asset("assets/images/Cart Icon.svg" ,height: 24 ,width: 24,)),
 
            
             ],
@@ -123,7 +133,7 @@ Navigator.push(context, MaterialPageRoute(builder: (context) =>
                                       color: itemsdatanew[index]["isFav"]==true ?const Color.fromARGB(255, 250, 0, 0) :Colors.grey,))
                                     , InkWell(
                                       onTap: () {
-                                       
+                                       addtoCartitemss(index);
                                       },
                                       child: SvgPicture.asset("assets/images/add.svg")),
                                    ],

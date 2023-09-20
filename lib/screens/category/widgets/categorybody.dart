@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:miniapp/Data/addtocartlist.dart';
 import 'package:miniapp/screens/category/models/category_items.dart';
 
 
@@ -22,6 +23,10 @@ void getCategoriesandsubCategoryitems(){
 void navigatetoNextPage(int index){
   Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoriesItemsScreen(),));
 }
+void addtoCart(int index){
+  addtoCartitems.add(AddedItems(price: categoryData[index]["price"], name: categoryData[index]["name"], quantity: categoryData[index]["quantity"], iconpath: categoryData[index]["image"]));
+}
+
   @override
   Widget build(BuildContext context) {
     getCategoriesandsubCategoryitems();
