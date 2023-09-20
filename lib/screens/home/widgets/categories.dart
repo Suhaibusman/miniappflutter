@@ -50,7 +50,17 @@ class _CategoriesBarState extends State<CategoriesBar> {
                  mainAxisAlignment: MainAxisAlignment.center,
                  mainAxisSize: MainAxisSize.min,
                 children: [
-
+                    IconButton(onPressed: (){
+                                         setState(() {
+                                          if (category[index].isFav==true) {
+                                            category[index].isFav=false;
+                                          } else {
+                                            category[index].isFav=true;
+                                          }
+                                        });
+                                      }, icon:  Icon(Icons.favorite_rounded ,
+                                      color: category[index].isFav==true ?const Color.fromARGB(255, 250, 0, 0) :Colors.grey,))
+                                    ,
                   Center(
                     child: Image.asset(
                       category[index].iconpath,
