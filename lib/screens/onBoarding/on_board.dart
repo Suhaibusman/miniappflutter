@@ -36,7 +36,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     setState(() {
                      Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen(),)); 
                     });
-                   }, buttonHeight: 70, buttonWidth: 253, backgroundColor: const Color(0xffFAFBFD), fontColor: Colors.black, iconimage: "assets/images/Arrow 4.svg",),
+                   },
+                   borderColor: Colors.transparent, buttonHeight: 70, buttonWidth: 253, backgroundColor: const Color(0xffFAFBFD), fontColor: Colors.black, iconimage: "assets/images/Arrow 4.svg",),
                  )
               ],
             ),

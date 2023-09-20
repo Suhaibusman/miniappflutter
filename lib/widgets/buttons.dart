@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,18 +10,21 @@ class CustomButtonWidget extends StatelessWidget {
   final double buttonWidth;
   final Color backgroundColor;
   final Color fontColor;
-  final String? iconimage;
+  Color borderColor;
+  String? iconimage;
   // final IconData? icondata;
-  const CustomButtonWidget({
-    super.key,
+  CustomButtonWidget({
+    Key? key,
+    // this.icondata,
     required this.buttonText,
     required this.onPressed,
     required this.buttonHeight,
     required this.buttonWidth,
     required this.backgroundColor,
-    required this.fontColor, this.iconimage,
-    // this.icondata,
-  });
+    required this.fontColor,
+    this.iconimage,
+    required this.borderColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +36,7 @@ class CustomButtonWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: const BorderRadius.all(Radius.circular(20)),
-          
+          border: Border.all(color: borderColor)
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -40,7 +44,11 @@ class CustomButtonWidget extends StatelessWidget {
             Center(child: Text(buttonText ,style:  TextStyle(fontFamily: "Manrope", fontSize: 16,fontWeight: FontWeight.w600 ,color: fontColor),)),
              Padding(
                padding: const EdgeInsets.only(left: 20),
-                child: SvgPicture.asset(iconimage! ,height: 20,width: 20,),
+                // child: 
+                
+                // SvgPicture.asset(
+                  
+                //   iconimage! ,height: 20,width: 20,),
              )
           ],
         ),

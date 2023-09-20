@@ -24,10 +24,11 @@ class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(child: Column(
+      
         children: [
-
+            
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               InkWell(
                 onTap: () => Navigator.pop(context),
@@ -59,13 +60,23 @@ class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
             },),
           ),
           Container(
-              color: const Color(0xffF8F9FB),
+            
+            decoration: const BoxDecoration(
+               color: Color.fromARGB(255, 34, 107, 252),borderRadius: BorderRadius.only(
+        topRight: Radius.circular(40),
+        topLeft: Radius.circular(40),
+               )
+            ),
+             
             child: Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(widget.itemdeatils.itemname ,style: const TextStyle(fontFamily: "Manrope", fontSize: 20 ,fontWeight: FontWeight.bold),)
+                  Padding(
+                    padding: const EdgeInsets.only(top:20),
+                    child: Text(widget.itemdeatils.itemname ,style: const TextStyle(fontFamily: "Manrope", fontSize: 20 ,fontWeight: FontWeight.bold),),
+                  )
                   ,Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -111,10 +122,18 @@ class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
                     ],
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CustomButtonWidget(buttonText: "Add to Cart", onPressed: (){}, buttonHeight: 56, buttonWidth: 143, backgroundColor: Colors.transparent, fontColor: const Color(0xff2A4BA0))
+                      CustomButtonWidget(buttonText: "Add to Cart", onPressed: (){}, buttonHeight: 56, buttonWidth: 143, backgroundColor: Colors.transparent, fontColor: const Color(0xff2A4BA0), borderColor: const Color(0xff2A4BA0),),
+                       CustomButtonWidget(buttonText: "Buy Now", onPressed: (){}, buttonHeight: 56, buttonWidth: 169, backgroundColor: const Color(0xff2A4BA0), fontColor: const Color(0xffFFFFFF), borderColor: const Color(0xff2A4BA0),)
                     ],
-                  )
+                  ),
+
+                  const Text("Details" ,style: TextStyle(
+                                                  color: Color(0xff1E222B),
+                                                  fontFamily: "Manrope", fontSize: 16 ,fontWeight: FontWeight.w400)),
+
+                    Text(widget.itemdeatils.categoryDetails , style: const TextStyle(height: 2 , color: Color(0xff8891A5),fontSize: 16),)                              
                 ],
               ),
             ),
