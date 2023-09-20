@@ -46,7 +46,7 @@ List str2 =["1","2"];
                             
                             Padding(
                               padding: const EdgeInsets.only(left: 20),
-                              child: SvgPicture.asset("assets/images/Emoji.svg"),
+                              child: SvgPicture.asset("assets/images/Emoji.svg" ,fit: BoxFit.cover,),
                             ),
                             
                              Padding(

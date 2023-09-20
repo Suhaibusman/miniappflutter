@@ -39,7 +39,9 @@ Navigator.push(context, MaterialPageRoute(builder: (context) =>
     return Scaffold(
       body: SafeArea(
         child: Column(
+          
         children: [
+          const SizedBox(height: 30,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

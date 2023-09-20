@@ -34,6 +34,7 @@ class _HomeTopDataState extends State<HomeTopData> {
                 SvgPicture.asset(
                   "assets/images/Cart Icon.svg",
                   height: 30,
+                  fit: BoxFit.cover,
                 )
               ],
             ),
@@ -52,7 +53,7 @@ class _HomeTopDataState extends State<HomeTopData> {
                     const TextStyle(color: Color(0xff8891A5), fontSize: 14),
                 prefixIcon: Padding(
                   padding: const EdgeInsets.all(12),
-                  child: SvgPicture.asset("assets/images/Search Icon.svg"),
+                  child: SvgPicture.asset("assets/images/Search Icon.svg",fit: BoxFit.cover,),
                 ),
               ),
             ),
@@ -99,7 +100,7 @@ class _HomeTopDataState extends State<HomeTopData> {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 5),
-                child: SvgPicture.asset("assets/images/arrow Iocn.svg"),
+                child: SvgPicture.asset("assets/images/arrow Iocn.svg", fit: BoxFit.cover,),
               ),
              
               const Text(
@@ -111,7 +112,7 @@ class _HomeTopDataState extends State<HomeTopData> {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 5),
-                child: SvgPicture.asset("assets/images/arrow Iocn.svg"),
+                child: SvgPicture.asset("assets/images/arrow Iocn.svg",fit: BoxFit.cover,),
               )
             ],
           ),

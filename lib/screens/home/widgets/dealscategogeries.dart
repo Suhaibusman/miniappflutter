@@ -57,7 +57,7 @@ _getDeals();
                                         Positioned(
                                           left: 6, top: 6,
                                           child: SvgPicture.asset(
-                                              "assets/images/plus-outline (3) 1.svg"),
+                                              "assets/images/plus-outline (3) 1.svg",fit: BoxFit.cover,),
                                         )
                                       ],
                                     ),

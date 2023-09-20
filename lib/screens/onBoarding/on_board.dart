@@ -28,7 +28,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               children: [
                 
                  const TopData(),
-                 SvgPicture.asset("assets/images/Image Icon.svg",height: 129,),
+                 SvgPicture.asset("assets/images/Image Icon.svg",height: 129,fit: BoxFit.cover,),
                  Padding(
                    padding: const EdgeInsets.only(bottom: 30),
                    child: CustomButtonWidget(buttonText: "Get Started", onPressed: (){

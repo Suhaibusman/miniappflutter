@@ -38,7 +38,7 @@ class _DiscountBarState extends State<DiscountBar> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 20, right: 10),
-                    child: SvgPicture.asset("assets/images/Image Icon.svg"),
+                    child: SvgPicture.asset("assets/images/Image Icon.svg",fit: BoxFit.cover,),
                   ),
                   Column(
                     children: [
