@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
+// ignore: must_be_immutable
 class CustomButtonWidget extends StatelessWidget {
   final String buttonText;
   final void Function() onPressed;
@@ -22,8 +22,8 @@ class CustomButtonWidget extends StatelessWidget {
     required this.buttonWidth,
     required this.backgroundColor,
     required this.fontColor,
-    this.iconimage,
     required this.borderColor,
+    this.iconimage,
   }) : super(key: key);
 
   @override
@@ -42,8 +42,8 @@ class CustomButtonWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(child: Text(buttonText ,style:  TextStyle(fontFamily: "Manrope", fontSize: 16,fontWeight: FontWeight.w600 ,color: fontColor),)),
-             Padding(
-               padding: const EdgeInsets.only(left: 20),
+             const Padding(
+               padding: EdgeInsets.only(left: 20),
                 // child: 
                 
                 // SvgPicture.asset(

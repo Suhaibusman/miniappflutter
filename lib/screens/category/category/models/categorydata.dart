@@ -20,11 +20,11 @@ Itemsdatanew({
 
    required this.isFav
 });
-String get _itemname =>itemname;
-String get _itemprice =>itemprice;
-List get _itemiamges =>itemimages;
-String get _reviews =>reviews;
-bool get _isFav =>isFav;
+// String get _itemname =>itemname;
+// String get _itemprice =>itemprice;
+// List get _itemiamges =>itemimages;
+// String get _reviews =>reviews;
+// bool get _isFav =>isFav;
 }
 
  List<Map<String, dynamic>> itemsdatanew = [
