@@ -33,7 +33,7 @@ List<SavedTime> savedTimes=[];
               decoration: BoxDecoration(
                   color: savedTimes[index].boxColor,
                   borderRadius: const BorderRadius.all(Radius.circular(20))),
-              margin: const EdgeInsets.only(left:10 ,top: 10 ,bottom:10),
+              margin: const EdgeInsets.only(top: 10 ,bottom:10),
               child: Column(
                 // crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -42,15 +42,12 @@ List<SavedTime> savedTimes=[];
                   Row(
                     // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20 ,right: 10),
-                        child: Text(savedTimes[index].timeText,
-                            style: const TextStyle(
-                                fontSize: 26,
-                                fontFamily: "Manrope",
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold)),
-                      ),
+                      Text(savedTimes[index].timeText,
+                          style: const TextStyle(
+                              fontSize: 26,
+                              fontFamily: "Manrope",
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold)),
                       Text(savedTimes[index].descrptionText,
                           style: const TextStyle(
                               fontSize: 26,

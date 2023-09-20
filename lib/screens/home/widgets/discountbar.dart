@@ -33,13 +33,10 @@ class _DiscountBarState extends State<DiscountBar> {
               decoration: BoxDecoration(
                   color: discount[index].boxColor,
                   borderRadius: const BorderRadius.all(Radius.circular(20))),
-              margin: const EdgeInsets.only(left:10 ,top: 10 ,bottom:10),
+              margin: const EdgeInsets.only( top: 10 ,bottom:10),
               child: Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 10),
-                    child: SvgPicture.asset("assets/images/Image Icon.svg",fit: BoxFit.cover,),
-                  ),
+                  SvgPicture.asset("assets/images/Image Icon.svg",fit: BoxFit.cover,),
                   Column(
                     children: [
                       Text(discount[index].simplegetText,

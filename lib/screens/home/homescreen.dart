@@ -19,39 +19,36 @@ class _HomeScreenState extends State<HomeScreen> {
     return const Scaffold(
         body: SafeArea(
             child: Column(
-          children: [
+                    children: [
             HomeTopData(),
             Expanded(
               child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    DiscountBar(),
-                    Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Text(
+                child: Padding(
+                padding: EdgeInsets.only(left: 10,right: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      DiscountBar(),
+                      Text(
                         "Recommended",
                         style: TextStyle(fontFamily: "Manrope", fontSize: 30),
                       ),
-                    ),
-                    CategoriesBar(),
-                    SavedTimeBar(),
-                    Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Text(
+                      CategoriesBar(),
+                      SavedTimeBar(),
+                      Text(
                         "Deals on Fruits & Tea",
                         style: TextStyle(fontFamily: "Manrope", fontSize: 30),
                       ),
-                    ),
-                    DealsOnFruit(),
-                  ],
+                      DealsOnFruit(),
+                    ],
+                  ),
                 ),
               ),
             ),
                 // NavBar()
-          
-          ],
-        )),
+                    
+                    ],
+                  )),
                 bottomNavigationBar: CustomBottomNavigationBar(pageindex: 0,)
         );
   }
