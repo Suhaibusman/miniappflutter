@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:miniapp/screens/category/category/models/category_items.dart';
+import 'package:miniapp/screens/category/models/category_items.dart';
+
 
 import 'category2/category2.dart';
 

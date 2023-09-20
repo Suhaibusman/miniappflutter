@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:miniapp/models/categories_part.dart';
-import 'package:miniapp/screens/category/category/widgets/category2/category2.dart';
+
+import '../../category/widgets/category2/category2.dart';
+
 
 class CategoriesBar extends StatefulWidget {
   const CategoriesBar({super.key});

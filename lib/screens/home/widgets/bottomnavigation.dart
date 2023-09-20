@@ -1,9 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:miniapp/screens/category/category/category.dart';
 import 'package:miniapp/screens/favourite/favouritescreen.dart';
 import 'package:miniapp/screens/home/homescreen.dart';
 import 'package:miniapp/screens/more/morescreen.dart';
+
+import '../../category/category.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   final int pageindex;
