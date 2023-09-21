@@ -39,6 +39,8 @@ Navigator.push(context, MaterialPageRoute(builder: (context) =>
   void addtoCartitemss(int index){
   addtoCartitems.add(AddedItems(price: itemsdatanew[index]["price"], name: itemsdatanew[index]["name"], quantity: itemsdatanew[index]["quantity"], iconpath: itemsdatanew[index]["image"][2]));
 }
+  
+
   @override
   Widget build(BuildContext context) {
      getCategoriesandsubCategoryitems();

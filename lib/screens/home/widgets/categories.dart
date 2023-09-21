@@ -24,12 +24,23 @@ class _CategoriesBarState extends State<CategoriesBar> {
 }
 
   void removeDuplicasy(index){
-     if (category[index].simplegetText==addtoCartitems[index].name ) {
-                                    print("object");
-                                  } else {
+    // for (var names in addtoCartitems) {
+    //   // ignore: unrelated_type_equality_checks
+    //   if (names == category[index].simplegetText) {
+    //     showDialog(context: context, builder: (context) {
+    //       return AlertDialog();
+    //     },);
+    //   } else {
+    //     addtoCart(index);
+    //   }
+    // }
+
+    //  if (category[index].simplegetText ==addtoCartitems. ) {
+    //                                 print("object");
+    //                               } else {
                                     
-                                   addtoCart(index);
-                                  }
+    //                                addtoCart(index);
+    //                               }
   }
   @override
   Widget build(BuildContext context) {
