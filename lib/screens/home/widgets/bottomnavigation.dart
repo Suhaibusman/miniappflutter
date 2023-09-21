@@ -44,31 +44,63 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         animationDuration: const Duration(milliseconds: 300),
         items: items,
         height: 70,
-        index: currentindex,
+          index: currentindex,
+          onTap: (selectedindex) {
+  setState(() {
+    currentindex = selectedindex;
+  });
+
+  if (selectedindex == 0) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+  } else if (selectedindex == 1) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoryScreenData()));
+  } else if (selectedindex == 2) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const FavouriteScreenData()));
+  } else if (selectedindex == 3) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData()));
+  }
+},
         // onTap: (selectedIndex) {
         //   setState(() {
-        //     index = selectedIndex;
+        //     selectedIndex = currentindex;
         //   });
         // },
-         onTap: (index) {
-          setState(() {
-     currentindex =index;
-             if(index ==0){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
-              // currentindex =index;
-             }else  if(index ==1){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoryScreenData(),));
-            //  currentindex =index;
-           } else  if(index ==2){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const FavouriteScreenData(),));
-            //  currentindex =index;
-             }else  if(index ==3){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),));
-            //  currentindex =index;
-             }
-          });
-        },
- letIndexChange: (pageindex) => true,
+      //    onTap: (selectedindex) {
+      //     setState(() {
+      // currentindex =selectedindex;
+      //        if(selectedindex ==0){
+      //         Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
+      //         // currentindex =index;
+      //         setState(() {
+      //           currentindex =0;
+      //           selectedindex =currentindex;
+      //         });
+              
+      //        }else  if(selectedindex ==1){
+      //         Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoryScreenData(),));
+      //       //  currentindex =index;
+
+      //       // currentindex =1;
+      //         setState(() {
+      //           currentindex =1;
+      //           selectedindex =currentindex;
+      //         });
+      //      } else  if(selectedindex ==2){
+      //         Navigator.push(context, MaterialPageRoute(builder: (context) => const FavouriteScreenData(),));
+      //       //  currentselectedindex =selectedindex;
+      //       currentindex =2;
+      //        }else  if(selectedindex ==3){
+      //         Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),));
+      //       //  currentindex =index;
+      //       // currentindex =3;
+      //         setState(() {
+      //           currentindex =3;
+      //           currentindex =selectedindex;
+      //         });
+      //        }
+      //     });
+      //   },
+//  letIndexChange: (pageindex) => true,
       );
      
     
