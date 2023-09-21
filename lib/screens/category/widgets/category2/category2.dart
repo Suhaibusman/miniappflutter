@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:miniapp/Data/addtocartlist.dart';
+import 'package:miniapp/Data/favouriteitems.dart';
 
 import 'package:miniapp/screens/category/category2/catitems.dart';
 import 'package:miniapp/screens/category/models/categorydata.dart';
@@ -40,6 +41,11 @@ Navigator.push(context, MaterialPageRoute(builder: (context) =>
   addtoCartitems.add(AddedItems(price: itemsdatanew[index]["price"], name: itemsdatanew[index]["name"], quantity: itemsdatanew[index]["quantity"], iconpath: itemsdatanew[index]["image"][2]));
 }
   
+void addtoFavourite(int index){
+  favitemslist.add(FavouriteitemsList(price: itemsdatanew[index]["price"], name: itemsdatanew[index]["name"], iconpath: itemsdatanew[index]["image"][2]));
+    
+                                         
+}
 
   @override
   Widget build(BuildContext context) {
@@ -124,13 +130,17 @@ Navigator.push(context, MaterialPageRoute(builder: (context) =>
                                  Column(
                                    children: [
                                       IconButton(onPressed: (){
-                                         setState(() {
+                                        setState(() {
                                           if (itemsdatanew[index]["isFav"]==true) {
                                             itemsdatanew[index]["isFav"]=false;
+                                            favitemslist.removeAt(index);
                                           } else {
                                             itemsdatanew[index]["isFav"]=true;
+                                            addtoFavourite(index);
                                           }
                                         });
+
+                                          
                                       }, icon:  Icon(Icons.favorite_rounded ,
                                       color: itemsdatanew[index]["isFav"]==true ?const Color.fromARGB(255, 250, 0, 0) :Colors.grey,))
                                     , InkWell(
