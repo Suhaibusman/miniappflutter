@@ -64,8 +64,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         else  if (pageindex ==3) {
           Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),));
         } 
-        // Update the selected screen based on the index
-        // You don't need to use Navigator.pushReplacement for this purpose
+     
       },
     );
   }

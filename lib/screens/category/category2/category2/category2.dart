@@ -33,7 +33,7 @@ void navigatetoitemdetails(int index){
 
 Navigator.push(context, MaterialPageRoute(builder: (context) =>
 
-  ItemsDetailsPage( itemdeatils: Itemsdatanew(itemname: itemsdatanew[index]["name"], categoryDetails: itemsdatanew[index]["details"], itemprice: itemsdatanew[index]["price"], itemimages: itemsdatanew[index]["image"], reviews: itemsdatanew[index]["reviews"], isFav: itemsdatanew[index]["isFav"])),
+  ItemsDetailsPage( itemdeatils: Itemsdatanew(itemname: itemsdatanew[index]["name"], categoryDetails: itemsdatanew[index]["details"], itemprice: itemsdatanew[index]["price"], itemimages: itemsdatanew[index]["image"], reviews: itemsdatanew[index]["reviews"], isFav: itemsdatanew[index]["isFav"] , quantity: itemsdatanew[index]["quantity"])),
  
 ),);
 }

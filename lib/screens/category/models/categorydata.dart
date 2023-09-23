@@ -6,7 +6,7 @@ class Itemsdatanew{
   
   List  itemimages;
   String    reviews;
-
+  int quantity;
   bool isFav;   
 
 Itemsdatanew({
@@ -17,7 +17,7 @@ Itemsdatanew({
   
   required  this.itemimages,
    required this.reviews,
-
+    required this.quantity,
    required this.isFav
 });
 // String get _itemname =>itemname;
