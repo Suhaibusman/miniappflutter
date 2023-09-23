@@ -3,7 +3,7 @@ import 'package:miniapp/screens/category/widgets/categorybody.dart';
 import 'package:miniapp/screens/category/widgets/categorytop.dart';
 
 
-import 'package:miniapp/screens/home/widgets/bottomnavigation.dart';
+import 'package:miniapp/screens/navbar/bottomnavigation.dart';
 
 
 

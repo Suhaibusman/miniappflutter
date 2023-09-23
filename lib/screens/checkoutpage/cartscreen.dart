@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:miniapp/Data/addtocartlist.dart';
+import 'package:miniapp/screens/checkoutpage/checkoutpage.dart';
+import 'package:miniapp/screens/checkoutpage/showmorecategorypage.dart';
 
-import 'package:miniapp/screens/home/widgets/bottomnavigation.dart';
+import 'package:miniapp/screens/navbar/bottomnavigation.dart';
+import 'package:miniapp/widgets/buttons.dart';
+import 'package:miniapp/widgets/constant/colors.dart';
 
 class CartScreenData extends StatefulWidget {
 
@@ -126,6 +130,9 @@ class _CartScreenDataState extends State<CartScreenData> {
                   child: Column(
                     
                     children: [
+                      InkWell(
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ShowMoreCartItems(),)),
+                        child: const Text("Show More")),
                       const SizedBox(height: 10,),
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -151,6 +158,11 @@ class _CartScreenDataState extends State<CartScreenData> {
                         ],
                       ),
                       const SizedBox(height: 10,),
+                      CustomButtonWidget(buttonText: "Proceed to checkout", onPressed: (){
+                        
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const CheckoutScreen(),),);}, buttonHeight: 56, buttonWidth: 327, backgroundColor: MyColors.blueColor, fontColor: MyColors.onBoardText1, borderColor: MyColors.blueColor)
+
+                      
                     ],
                   ),
                 ),

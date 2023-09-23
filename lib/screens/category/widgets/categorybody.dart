@@ -3,7 +3,7 @@ import 'package:miniapp/Data/addtocartlist.dart';
 import 'package:miniapp/screens/category/models/category_items.dart';
 
 
-import 'category2/category2.dart';
+import '../category2/category2/category2.dart';
 
 class CategoryData extends StatefulWidget {
   const CategoryData({super.key});

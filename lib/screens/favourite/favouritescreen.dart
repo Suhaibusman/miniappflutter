@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miniapp/Data/favouriteitems.dart';
-import 'package:miniapp/screens/home/widgets/bottomnavigation.dart';
+import 'package:miniapp/screens/navbar/bottomnavigation.dart';
 
 
 class FavouriteScreenData extends StatefulWidget {
