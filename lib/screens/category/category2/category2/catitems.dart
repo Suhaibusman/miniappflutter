@@ -210,12 +210,12 @@ class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
                   CustomButtonWidget(
                     buttonText: "Add to Cart",
                     onPressed: () {
-                    // addtoCartitems.add(AddedItems(price: widget.itemdeatils.itemprice, name: widget.itemdeatils.itemname, quantity: widget.itemdeatils.quantity, iconpath: widget.itemdeatils.itemimages[2]));
-                    // showDialog(context: context, builder:  (context) {
-                    //   return const AlertDialog(
-                    //     title: Text("data"),
-                    //   );
-                    // },);
+                    addtoCartitems.add(AddedItems(price: widget.itemdeatils.itemprice, name: widget.itemdeatils.itemname, quantity: widget.itemdeatils.quantity, iconpath: widget.itemdeatils.itemimages[2]));
+                    showDialog(context: context, builder:  (context) {
+                      return const AlertDialog(
+                        title: Text("data"),
+                      );
+                    },);
                      },
                     buttonHeight: 56,
                     buttonWidth: 143,
