@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:miniapp/Data/addtocartlist.dart';
 import 'package:miniapp/Data/favouriteitems.dart';
+import 'package:miniapp/Data/products_data.dart';
 
 import 'package:miniapp/screens/category/category2/catitems.dart';
 import 'package:miniapp/screens/category/models/categorydata.dart';
@@ -39,7 +40,28 @@ Navigator.push(context, MaterialPageRoute(builder: (context) =>
 ),);
 }
   void addtoCartitemss(int index){
-  addtoCartitems.add(AddedItems(price: itemsdatanew[index]["price"], name: itemsdatanew[index]["name"], quantity: itemsdatanew[index]["quantity"], iconpath: itemsdatanew[index]["image"][2]));
+    bool itemExsist =false;
+for (var i = 0; i < cartItems.length; i++) {
+  if (cartItems[i]["name"]==itemsdatanew[index]["name"]) {
+      itemExsist=true;
+      
+    showDialog(context: context, builder: (context) {
+      return AlertDialog(
+        title: Text("${itemsdatanew[index]["name"]} is Already in Cart, Do U Want To Update Quantity" ),
+
+      );
+    
+
+    },
+    
+    
+    );
+  } if(!itemExsist) {
+    addtoCartitems.add(AddedItems(price: itemsdatanew[index]["price"], name: itemsdatanew[index]["name"], quantity: itemsdatanew[index]["quantity"], iconpath: itemsdatanew[index]["image"][2]));
+  }
+}
+
+  
 }
   
 void addtoFavourite(int index){
