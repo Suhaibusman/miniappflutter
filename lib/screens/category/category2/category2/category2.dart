@@ -6,6 +6,7 @@ import 'package:miniapp/Data/favouriteitems.dart';
 import 'package:miniapp/screens/category/category2/catitems.dart';
 import 'package:miniapp/screens/category/models/categorydata.dart';
 import 'package:miniapp/screens/checkoutpage/cartscreen.dart';
+import 'package:miniapp/widgets/constant/colors.dart';
 
 class CategoriesItemsScreen extends StatefulWidget {
   const CategoriesItemsScreen({super.key});
@@ -56,27 +57,50 @@ void addtoFavourite(int index){
           
         children: [
           const SizedBox(height: 30,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              InkWell(
-                onTap: () => Navigator.pop(context),
-                child: SvgPicture.asset("assets/images/Group 73.svg"
-                ,height: 40 ,width: 40,
+          Padding(
+            padding: const EdgeInsets.only(left :20 ,right: 20 ,top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                  onTap: () => Navigator.pop(context),
+                  child: SvgPicture.asset("assets/images/Group 73.svg"
+                  ,height: 40 ,width: 40,
+                  ),
                 ),
-              ),
-              const Text("Items" ,style: TextStyle(fontFamily: "Manrope" ,fontSize: 16,fontWeight: FontWeight.w400),),
-              SvgPicture.asset("assets/images/Search Icon.svg" ,colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
-              // ,height: 18 ,width:  18,
-              ),
-              GestureDetector(
-                onTap:(){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),));
-                } ,
-                child: SvgPicture.asset("assets/images/Cart Icon.svg" ,height: 24 ,width: 24,)),
-
-           
-            ],
+                const Text("Items" ,style: TextStyle(fontFamily: "Manrope" ,fontSize: 16,fontWeight: FontWeight.w400),),
+                SvgPicture.asset("assets/images/Search Icon.svg" ,colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                // ,height: 18 ,width:  18,
+                ),
+                InkWell(
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),)),
+                    child: Stack(
+                      children:[ SvgPicture.asset(
+                        "assets/images/carticonblack.svg",
+                        height: 24,
+                        width: 24,
+                        fit: BoxFit.cover,
+                      ),
+                       Positioned(
+                       
+                       left: 7,
+                       right: 2, 
+                       bottom: 10,
+                        child: CircleAvatar(radius: 9, backgroundColor: MyColors.darkYellowColor,
+                        child: Positioned(
+                        left: 7,bottom: 7,right: 7,
+                          child: Text(
+                            
+                           addtoCartitems.length.toString() ,style: const TextStyle(color: Colors.white, fontFamily: "Manrope",fontSize: 12,fontWeight: FontWeight.w600 ),)),
+                        ),
+                        )
+                      ]
+                    ),
+                  )
+          
+             
+              ],
+            ),
           ),
                    SizedBox(
                     height: 30,

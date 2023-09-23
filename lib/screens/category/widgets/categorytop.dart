@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:miniapp/Data/addtocartlist.dart';
+import 'package:miniapp/screens/checkoutpage/cartscreen.dart';
+import 'package:miniapp/widgets/constant/colors.dart';
 
 class CategoryTopBar extends StatelessWidget {
   const CategoryTopBar({super.key});
@@ -27,9 +30,30 @@ class CategoryTopBar extends StatelessWidget {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                SvgPicture.asset(
-                  "assets/images/Cart Icon.svg",
-                  height: 30,
+               InkWell(
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),)),
+                  child: Stack(
+                    children:[ SvgPicture.asset(
+                      "assets/images/carticonwhite.svg",
+                      height: 24,
+                      width: 24,
+                      fit: BoxFit.cover,
+                    ),
+                     Positioned(
+                     
+                     left: 7,
+                     right: 2, 
+                     bottom: 10,
+                      child: CircleAvatar(radius: 9, backgroundColor: MyColors.darkYellowColor,
+                      child: Positioned(
+                      left: 7,bottom: 7,right: 7,
+                        child: Text(
+                          
+                         addtoCartitems.length.toString() ,style: const TextStyle(color: Colors.white, fontFamily: "Manrope",fontSize: 12,fontWeight: FontWeight.w600 ),)),
+                      ),
+                      )
+                    ]
+                  ),
                 )
               ],
             ),

@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:miniapp/Data/addtocartlist.dart';
 import 'package:miniapp/screens/checkoutpage/cartscreen.dart';
 import 'package:miniapp/widgets/buttons.dart';
+import 'package:miniapp/widgets/constant/colors.dart';
 
 import '../../models/categorydata.dart';
 
@@ -31,42 +32,61 @@ class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
          
-       Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-       
-        children: [
-          InkWell(
-            onTap: () => Navigator.pop(context),
-            child: SvgPicture.asset(
-              "assets/images/Group 73.svg",
-              height: 40,
-              width: 40,
+       Padding(
+         padding: const EdgeInsets.all(8.0),
+         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+         
+          children: [
+            InkWell(
+              onTap: () => Navigator.pop(context),
+              child: SvgPicture.asset(
+                "assets/images/Group 73.svg",
+                height: 40,
+                width: 40,
+              ),
             ),
-          ),
-          Text(
-            widget.itemdeatils.itemname,
-            style: const TextStyle(
-                fontFamily: "Manrope",
-                fontSize: 16,
-                fontWeight: FontWeight.w400),
-          ),
-          SvgPicture.asset(
-            "assets/images/Search Icon.svg",
-            colorFilter:
-                const ColorFilter.mode(Colors.black, BlendMode.srcIn),
-            // ,height: 18 ,width:  18,
-          ),
-          InkWell(
-
-            onTap: () =>  Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),)),
-            child: SvgPicture.asset(
-              "assets/images/Cart Icon.svg",
-              height: 24,
-              width: 24,
+            Text(
+              widget.itemdeatils.itemname,
+              style: const TextStyle(
+                  fontFamily: "Manrope",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400),
             ),
-          ),
-        ],
-      ),
+            SvgPicture.asset(
+              "assets/images/Search Icon.svg",
+              colorFilter:
+                  const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+              // ,height: 18 ,width:  18,
+            ),
+            InkWell(
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),)),
+                      child: Stack(
+                        children:[ SvgPicture.asset(
+                          "assets/images/carticonblack.svg",
+                          height: 24,
+                          width: 24,
+                          fit: BoxFit.cover,
+                        ),
+                         Positioned(
+                         
+                         left: 7,
+                         right: 2, 
+                         bottom: 10,
+                          child: CircleAvatar(radius: 9, backgroundColor: MyColors.darkYellowColor,
+                          child: Positioned(
+                          left: 7,bottom: 7,right: 7,
+                            child: Text(
+                              
+                             addtoCartitems.length.toString() ,style: const TextStyle(color: Colors.white, fontFamily: "Manrope",fontSize: 12,fontWeight: FontWeight.w600 ),)),
+                          ),
+                          )
+                        ]
+                      ),
+                    )
+          ],
+             ),
+       ),
       SizedBox(
         height: 200,
         child: PageView.builder(
@@ -190,13 +210,13 @@ class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
                   CustomButtonWidget(
                     buttonText: "Add to Cart",
                     onPressed: () {
-                    addtoCartitems.add(AddedItems(price: widget.itemdeatils.itemprice, name: widget.itemdeatils.itemname, quantity: widget.itemdeatils.quantity, iconpath: widget.itemdeatils.itemimages[2]));
-                    showDialog(context: context, builder:  (context) {
-                      return const AlertDialog(
-                        title: Text("data"),
-                      );
-                    },);
-                    },
+                    // addtoCartitems.add(AddedItems(price: widget.itemdeatils.itemprice, name: widget.itemdeatils.itemname, quantity: widget.itemdeatils.quantity, iconpath: widget.itemdeatils.itemimages[2]));
+                    // showDialog(context: context, builder:  (context) {
+                    //   return const AlertDialog(
+                    //     title: Text("data"),
+                    //   );
+                    // },);
+                     },
                     buttonHeight: 56,
                     buttonWidth: 143,
                     backgroundColor: Colors.transparent,
