@@ -70,7 +70,8 @@ _getDeals();
                                     ],
                                   ),
                                   IconButton(
-                            
+                            icon:  Icon(Icons.favorite_rounded ,
+                                    color: deals[index].isFav==true ?const Color.fromARGB(255, 250, 0, 0) :Colors.grey,),
                             onPressed: (){
                                        setState(() {
                                         if (deals[index].isFav==true) {
@@ -79,8 +80,7 @@ _getDeals();
                                           deals[index].isFav=true;
                                         }
                                       });
-                                    }, icon:  Icon(Icons.favorite_rounded ,
-                                    color: deals[index].isFav==true ?const Color.fromARGB(255, 250, 0, 0) :Colors.grey,))
+                                    }, )
                                   ,
                                   ],
                       )

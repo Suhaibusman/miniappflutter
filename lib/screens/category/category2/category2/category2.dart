@@ -85,10 +85,10 @@ void addtoFavourite(int index){
                        
                        left: 7,
                        right: 2, 
-                       bottom: 10,
+                       bottom: 7,
                         child: CircleAvatar(radius: 9, backgroundColor: MyColors.darkYellowColor,
                         child: Positioned(
-                        left: 7,bottom: 7,right: 7,
+                        
                           child: Text(
                             
                            addtoCartitems.length.toString() ,style: const TextStyle(color: Colors.white, fontFamily: "Manrope",fontSize: 12,fontWeight: FontWeight.w600 ),)),
