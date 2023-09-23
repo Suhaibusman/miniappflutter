@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:miniapp/screens/home/homescreen.dart';
 
 import 'package:miniapp/screens/onBoarding/widgets/topdata.dart';
@@ -28,7 +28,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               children: [
                 
                  const TopData(),
-                 SvgPicture.asset("assets/images/Image Icon.svg",height: 129,fit: BoxFit.cover,),
+                 Container(
+                  height: 300,
+                  width: 300,
+                  color: Colors.transparent,
+                   child: Image.asset("assets/images/shoppinggif.gif",
+                   
+                   ),
+                 ),
                  Padding(
                    padding: const EdgeInsets.only(bottom: 30),
                    child: CustomButtonWidget(buttonText: "Get Started", onPressed: (){
