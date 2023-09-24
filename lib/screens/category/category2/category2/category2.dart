@@ -60,6 +60,11 @@ Navigator.push(context, MaterialPageRoute(builder: (context) =>
         TextButton(onPressed: () async{
           addtoCartitems.removeWhere((item) => item.name ==itemsdatanew[index]["name"]);
           itemsdatanew[index]["isInCart"] = false;
+                   ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(
+      "${itemsdatanew[index]["name"]} is remove from Cart"
+    )),
+  );
           Navigator.pop(context);
         }, child: const Text("Yes"))],
         );
@@ -76,6 +81,11 @@ Navigator.push(context, MaterialPageRoute(builder: (context) =>
       ),
     );
    itemsdatanew[index]["isInCart"] = true;
+                      ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(
+      "${itemsdatanew[index]["name"]} is added to Cart"
+    )),
+  );
   }
 }
   

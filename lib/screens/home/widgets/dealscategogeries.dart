@@ -59,7 +59,13 @@ class _DealsOnFruitState extends State<DealsOnFruit> {
         iconpath: deals[index].iconpath,
       ),
     );
+
    deals[index].isInCart = true;
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(
+      "${deals[index].description} is added to Cart"
+    )),
+  );
   }
 }
 

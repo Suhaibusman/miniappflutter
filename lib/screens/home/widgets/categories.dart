@@ -39,7 +39,13 @@ class _CategoriesBarState extends State<CategoriesBar> {
         TextButton(onPressed: () async{
           addtoCartitems.removeWhere((item) => item.name ==category[index].simplegetText);
           category[index].isInCart = false;
+              ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(
+      "${category[index].simplegetText} is remove from cart"
+    )),
+  );
           Navigator.pop(context);
+          
         }, child: const Text("Yes"))],
         );
       },
@@ -55,30 +61,14 @@ class _CategoriesBarState extends State<CategoriesBar> {
       ),
     );
     category[index].isInCart = true;
+    ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(
+      "${category[index].simplegetText} is added to Cart"
+    )),
+  );
   }
 }
 
-//   void addtoCart(int index){
-//   if (category[index].isInCart ==true) {
-//     showDialog(context: context, builder: (context) {
-//       return AlertDialog(
-//         title: Text("${category[index].simplegetText} is Already in cart"),
-        // content: const Text("Do You Want To Update Quantity ?"),
-        // actions: [ TextButton(onPressed: (){
-        //   Navigator.pop(context);
-        // }, child: const Text("No")),
-        // TextButton(onPressed: (){
-        //   addtoCartitems[index].quantity +=1;
-        //   Navigator.pop(context);
-        // }, child: const Text("Yes"))],
-//       );
-//     },);
-//   } if (category[index].isInCart ==false) {
-//     addtoCartitems.add(AddedItems(price: category[index].categoryPrice, name: category[index].simplegetText, quantity: category[index].quantity, iconpath: category[index].iconpath));
-// category[index].isInCart =true;
-
-//   }
-// }
 
  
   @override

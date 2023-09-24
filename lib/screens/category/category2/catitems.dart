@@ -42,7 +42,13 @@ class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
         TextButton(onPressed: () async{
           addtoCartitems.removeWhere((item) => item.name == widget.itemdeatils.itemname);
          widget.itemdeatils.isInCart = false;
+                  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(
+      "${widget.itemdeatils.itemname} is remove from Cart"
+    )),
+  );
           Navigator.pop(context);
+     
         }, child: const Text("Yes"))],
         );
       },
@@ -58,6 +64,11 @@ class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
       ),
     );
       widget.itemdeatils.isInCart= true;
+             ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(
+      "${widget.itemdeatils.itemname} is added to Cart"
+    )),
+  );
   }
 }
 
