@@ -18,9 +18,7 @@ class _DealsOnFruitState extends State<DealsOnFruit> {
     });
   }
 
-  void addtocartsa(int index){
-    addtoCartitems.add(AddedItems(price: deals[index].price, name: deals[index].description, quantity: deals[index].quantity, iconpath: deals[index].iconpath));
-  }
+
       void addtoCart(int index) {
   // Check if the item already exists in the addtoCartitems list.
   bool itemExists = addtoCartitems.any((item) =>

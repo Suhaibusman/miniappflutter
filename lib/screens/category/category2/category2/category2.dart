@@ -63,6 +63,44 @@ for (var i = 0; i < cartItems.length; i++) {
 
   
 }
+  void addtoCart(int index) {
+  // Check if the item already exists in the addtoCartitems list.
+  bool itemExists = addtoCartitems.any((item) =>
+      item.name == itemsdatanew[index]["name"] &&
+      item.price == itemsdatanew[index]["price"]);
+
+  if (itemExists) {
+    // Show a dialog if the item is already in the cart.
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("${itemsdatanew[index]["name"]} is Already in cart"),
+                    content: const Text("Do You Want To Remove From Cart?"),
+        actions: [ TextButton(onPressed: (){
+          Navigator.pop(context);
+        }, child: const Text("No")),
+        TextButton(onPressed: () async{
+          addtoCartitems.removeWhere((item) => item.name ==itemsdatanew[index]["name"]);
+          itemsdatanew[index]["isInCart"] = false;
+          Navigator.pop(context);
+        }, child: const Text("Yes"))],
+        );
+      },
+    );
+  } else {
+    // Add the item to the cart and update its `isInCart` property.
+    addtoCartitems.add(
+      AddedItems(
+        price: itemsdatanew[index]["price"],
+        name: itemsdatanew[index]["name"],
+        quantity: itemsdatanew[index]["quantity"],
+        iconpath: itemsdatanew[index]["image"][2],
+      ),
+    );
+   itemsdatanew[index]["isInCart"] = true;
+  }
+}
   
 void addtoFavourite(int index){
   favitemslist.add(FavouriteitemsList(price: itemsdatanew[index]["price"], name: itemsdatanew[index]["name"], iconpath: itemsdatanew[index]["image"][2]));
@@ -199,7 +237,7 @@ void addtoFavourite(int index){
                                       color: itemsdatanew[index]["isFav"]==true ?const Color.fromARGB(255, 250, 0, 0) :Colors.grey,))
                                     , InkWell(
                                       onTap: () {
-                                       addtoCartitemss(index);
+                                     addtoCart(index);
                                       },
                                       child: SvgPicture.asset("assets/images/add.svg")),
                                    ],
