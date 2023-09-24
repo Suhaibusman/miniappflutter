@@ -46,12 +46,9 @@ class _FavouriteScreenDataState extends State<FavouriteScreenData> {
                           children: [
                         IconButton(onPressed: (){
                             setState(() {
-                              favitemslist.removeWhere((item) => item.name == favitemslist[index].name
-                              
-                              // ||item.name == deals[index].description
-                              
-                              );
+                              favitemslist.removeWhere((item) => item.name == favitemslist[index].name);
                           itemsdatanew[index]["isFav"] = false;
+                           // ||item.name == deals[index].description
                             // deals[index].isFav =false;
                             });
                         }, icon: const Icon(Icons.favorite),

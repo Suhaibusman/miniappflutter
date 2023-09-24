@@ -159,7 +159,7 @@ class _CategoriesBarState extends State<CategoriesBar> {
                             ),
                           ),
                           Text(
-                            category[index].categoryPrice,
+                            category[index].categoryPrice.toString(),
                             style: const TextStyle(
                               fontFamily: "Manrope",
                               fontSize: 14,

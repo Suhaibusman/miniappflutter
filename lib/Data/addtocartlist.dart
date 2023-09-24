@@ -1,6 +1,6 @@
 class AddedItems{
 
-  String price;
+  int price;
   String name;
   int quantity;
   String iconpath;

@@ -157,7 +157,7 @@ CategoryData({
               ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
               "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
               ],
-              "price" : "\$6",
+              "price" : 6,
               "name": "Mc Donalds Burger"
               } ,
               {"images" : [
@@ -165,7 +165,7 @@ CategoryData({
               ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
               "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
               ],
-              "price" : "\$6",
+              "price" : 6,
               "name": "Mc Donalds Burger"
               },
               {"images" : [
@@ -173,7 +173,7 @@ CategoryData({
               ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
               "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
               ],
-              "price" : "\$6",
+              "price" : 6,
               "name": "Mc Donalds Burger"
               }
             ] ,
@@ -182,7 +182,7 @@ CategoryData({
               ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
               "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
               ] ,
-              "price" : "\$3",
+              "price" : 3,
               "name": "burger"
               }],
             "bigdeals" :[ {"image" : [
@@ -190,7 +190,7 @@ CategoryData({
               ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
               "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
               ],
-              "price" :"\$2",
+              "price" :2,
               "name": "mini burger"
               }]
           }
@@ -216,7 +216,7 @@ CategoryData({
               ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
               "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
               ],
-              "price" : "\$6",
+              "price" : 6,
               "name": "Mc Donalds Burger"
               } ,
               {"images" : [
@@ -224,7 +224,7 @@ CategoryData({
               ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
               "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
               ],
-              "price" : "\$6",
+              "price" : 6,
               "name": "Mc Donalds Burger"
               },
               {"images" : [
@@ -232,7 +232,7 @@ CategoryData({
               ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
               "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
               ],
-              "price" : "\$6",
+              "price" : 6,
               "name": "Mc Donalds Burger"
               }
             ] ,
@@ -241,7 +241,7 @@ CategoryData({
               ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
               "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
               ] ,
-              "price" : "\$3",
+              "price" : 3,
               "name": "burger"
               }],
             "bigdeals" :[ {"image" : [
@@ -249,7 +249,7 @@ CategoryData({
               ,"assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100 (1).png",
               "assets/images/CategoryandSub/subcategoryimages/mcdonalds/icons8-hamburger-100.png"
               ],
-              "price" :"\$2",
+              "price" :2,
               "name": "mini burger"
               }]
           }

@@ -233,7 +233,7 @@ void addtoFavourite(int index){
                                                Text(itemsdatanew[index]["name"], style: const TextStyle(fontFamily: "Manrope" ,
                                               fontSize: 13 ,fontWeight: FontWeight.w600 ,color: Colors.black),),
                                      
-                                       Text(itemsdatanew[index]["price"], style: const TextStyle(fontFamily: "Manrope" ,
+                                       Text(itemsdatanew[index]["price"].toString(), style: const TextStyle(fontFamily: "Manrope" ,
                                          fontSize: 12 ,fontWeight: FontWeight.w400 ,color: Color(0xff616A7D)),)
                                      
                                        ],

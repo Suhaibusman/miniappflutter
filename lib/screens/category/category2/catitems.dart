@@ -165,7 +165,7 @@ class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "${widget.itemdeatils.itemprice}/Kg",
+                        "${widget.itemdeatils.itemprice.toString()}/Kg",
                         style: const TextStyle(
                             color: Color(0xff2A4BA0),
                             fontFamily: "Manrope",

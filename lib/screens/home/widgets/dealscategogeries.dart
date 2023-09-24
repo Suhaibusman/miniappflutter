@@ -20,7 +20,7 @@ class _DealsOnFruitState extends State<DealsOnFruit> {
   }
 
     void addtoFavourite(int index){
-  favitemslist.add(FavouriteitemsList(price: deals[index].price, name: deals[index].description, iconpath: deals[index].iconpath));
+  favitemslist.add(FavouriteitemsList(price: deals[index].price.toString(), name: deals[index].description, iconpath: deals[index].iconpath));
     
                                          
 }
@@ -118,29 +118,36 @@ _getDeals();
                                       ],
                                     ),
                           ),
-                                   IconButton(onPressed: (){
-                                        setState(() {
-                                          if (deals[index].isFav==true) {
-                                            deals[index].isFav=false;
-                                            favitemslist.removeWhere((item) => item.name == 
-                                            deals[index].description
-                                            );
-                                          } else {
-                                            deals[index].isFav=true;
-                                             addtoFavourite(index);
-                                          }
-                                        });
+                                  IconButton(
+  onPressed: () {
+    setState(() {
+      if (deals[index].isFav == true) {
+        deals[index].isFav = false;
+        favitemslist.removeWhere((item) =>
+            item.name == deals[index].description);
+      } else {
+        deals[index].isFav = true;
+        addtoFavourite(index);
+      }
+      // Debug print to check the value of isFav
+      print("isFav: ${deals[index].isFav}");
+    });
+  },
+  icon: Icon(
+    Icons.favorite_rounded,
+    color: deals[index].isFav == true
+        ? const Color.fromARGB(255, 250, 0, 0)
+        : Colors.grey,
+  ),
+)
 
-                                          
-                                      }, icon:  Icon(Icons.favorite_rounded ,
-                                      color: deals[index].isFav==true ?const Color.fromARGB(255, 250, 0, 0) :Colors.grey,))
                                   ,
                                   ],
                       )
                     ],
                   ),
                  
-                                  Text(deals[index].price ,style: const TextStyle(
+                                  Text(deals[index].price.toString() ,style: const TextStyle(
                                     fontFamily: "Manrope" ,fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black

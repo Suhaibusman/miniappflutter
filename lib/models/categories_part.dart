@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 class Categorypart{
   String simplegetText;
-  String categoryPrice;
+  int categoryPrice;
   String iconpath;
   String orderdetails;
   Color? boxColor;
@@ -26,17 +26,17 @@ static List<Categorypart> getCategorypart(){
 
   category.add(
 
-    Categorypart(simplegetText: "Fresh Lemon", categoryPrice: "12\$", orderdetails: "Organic", iconpath: "assets/images/lemon.png",quantity: 1, isFav: false ,isInCart: false)
+    Categorypart(simplegetText: "Fresh Lemon", categoryPrice: 12, orderdetails: "Organic", iconpath: "assets/images/lemon.png",quantity: 1, isFav: false ,isInCart: false)
   );
 
    category.add(
 
-    Categorypart(simplegetText: "Green Tea", categoryPrice: "06\$", orderdetails: "Organic", iconpath: "assets/images/greentea.png",quantity: 1, isFav: false,isInCart: false)
+    Categorypart(simplegetText: "Green Tea", categoryPrice: 06, orderdetails: "Organic", iconpath: "assets/images/greentea.png",quantity: 1, isFav: false,isInCart: false)
   );
 
   category.add(
 
-    Categorypart(simplegetText: "Fresh Fish", categoryPrice: "16\$", orderdetails: "Organic", iconpath: "assets/images/fish.png",quantity: 1, isFav: false,isInCart: false)
+    Categorypart(simplegetText: "Fresh Fish", categoryPrice: 16, orderdetails: "Organic", iconpath: "assets/images/fish.png",quantity: 1, isFav: false,isInCart: false)
   );
     
  return category;

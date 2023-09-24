@@ -1,7 +1,7 @@
 class Itemsdatanew{
   String itemname;
   
-  String itemprice;
+  int itemprice;
   String categoryDetails;
   
   List  itemimages;
@@ -33,7 +33,7 @@ Itemsdatanew({
    {
              
               
-              "price" : "\$9",
+              "price" : 7,
               "name": "Burger Tonight" ,
               "quantity":1,
               "image":  [
@@ -49,7 +49,7 @@ Itemsdatanew({
                  {
              
               "reviews":"110",
-              "price" : "\$3",
+              "price" : 3,
               "name": "Mighty burger" ,
                "quantity":1,
                
@@ -65,7 +65,7 @@ Itemsdatanew({
                  {
              "reviews":"110",
                "quantity":1,
-              "price" : "\$5",
+              "price" : 5,
               "name": "Subway Burger" ,
               "image":  [
                 "assets/images/CategoryandSub/subcategoryimages/mcdonalds/burger.png"
@@ -79,7 +79,7 @@ Itemsdatanew({
                  {
               "quantity":1,
               "reviews":"110",
-              "price" : "\$8",
+              "price" : 8,
               "name": "KFC Burger" ,
               "image":  [
                 "assets/images/CategoryandSub/subcategoryimages/mcdonalds/burger.png"

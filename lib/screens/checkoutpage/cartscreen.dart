@@ -62,6 +62,14 @@ class _CartScreenDataState extends State<CartScreenData> {
       }
     
   }
+double calculateSubtotal() {
+  double subtotal = 0.0;
+  for (var item in addtoCartitems) {
+    subtotal += item.price * item.quantity;
+  }
+  return subtotal;
+}
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -79,7 +87,7 @@ class _CartScreenDataState extends State<CartScreenData> {
             Container(
               color: const Color(0xffFFC83A),
               width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.35,
+              height: MediaQuery.of(context).size.height * 0.25,
               child: Image.asset("assets/images/cartbannerrs.png"),
             ),
             Expanded(
@@ -87,7 +95,7 @@ class _CartScreenDataState extends State<CartScreenData> {
                 itemCount: addtoCartitems.length,
                 itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.only(bottom: 5),
+                  padding: const EdgeInsets.only(bottom: 2),
                   child: Column(
                     children: [
                       ListTile(
@@ -97,14 +105,16 @@ class _CartScreenDataState extends State<CartScreenData> {
                            child: Image.asset(addtoCartitems[index].iconpath),
                         ),
                         title: Text(addtoCartitems[index].name ,style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),),
-                        subtitle: Text(addtoCartitems[index].price ,style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.w400),),
+                        subtitle: Text(addtoCartitems[index].price.toString() ,style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.w400),),
                         trailing: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             TextButton(onPressed: (){
                               decreaseQuantity(index);
                             }, child: Image.asset("assets/images/minus.png")),
-                              Text(addtoCartitems[index].quantity.toString()),
+                              SizedBox(
+                                width: 20,
+                                child: Text(addtoCartitems[index].quantity.toString())),
                            TextButton(onPressed: (){
                             increaseQuantity(index);
                            }, child: Image.asset("assets/images/plus.png")),
@@ -129,16 +139,17 @@ class _CartScreenDataState extends State<CartScreenData> {
                   padding: const EdgeInsets.only(left: 40,right: 40 ,top: 20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       InkWell(
                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ShowMoreCartItems(),)),
-                        child: const Text("Show More")),
+                        child: const Text("Show More" ,style: TextStyle(color: MyColors.blueColor),)),
                       const SizedBox(height: 10,),
-                      const Row(
+                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Subtotal"),
-                          Text("\$35.96",style: TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),)
+                          const Text("Subtotal"),
+                          Text(calculateSubtotal().toString(),style: TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),)
                         ],
                       ),
                       const SizedBox(height: 10,),
