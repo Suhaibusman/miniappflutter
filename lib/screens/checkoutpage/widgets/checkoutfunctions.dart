@@ -41,10 +41,7 @@ double calculateTotal() {
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // InkWell(
-                      //   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ShowMoreCartItems(),)),
-                      //   child: const Text("Show More" ,style: TextStyle(color: MyColors.blueColor),)),
-                      // const SizedBox(height: 10,),
+                   
                        Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

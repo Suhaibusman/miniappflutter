@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:miniapp/Data/addtocartlist.dart';
+import 'package:miniapp/screens/checkoutpage/showmorecategorypage.dart';
+import 'package:miniapp/screens/checkoutpage/widgets/cartitemsinlist.dart';
 
 import 'package:miniapp/screens/checkoutpage/widgets/checkoutfunctions.dart';
 
 import 'package:miniapp/screens/navbar/bottomnavigation.dart';
+import 'package:miniapp/widgets/constant/colors.dart';
 
 
 class CartScreenData extends StatefulWidget {
@@ -19,60 +22,17 @@ class _CartScreenDataState extends State<CartScreenData> {
   void addedItems(){
     addtoCartitems =addtoCartitems;
   }
-    void increaseQuantity(int index) {
-    setState(() {
-      addtoCartitems[index].quantity += 1;
-    });
-  }
+    
+    bool listlength(){
+      bool visibility;
+        if (addtoCartitems.length >= 3) {
+          visibility =true;
+        } else {
+          visibility =false;
+        }
 
-  void decreaseQuantity(int index) {
-    
-      if (addtoCartitems[index].quantity == 1) {
-        showDialog(context: context, builder: (context) {
-           Widget cancelButton = TextButton(
-    child: const Text("Cancel"),
-    onPressed:  () {
-     
-      Navigator.pop(context);
-    },
-  );
-  Widget continueButton = TextButton(
-    child: const Text("Continue"),
-    onPressed:  () {
-      setState(() {
-          addtoCartitems.removeAt(index);
-          Navigator.pop(context);
-      });
-    },
-  );
-          return  AlertDialog(title: const Text("Do You Want to remove"),
-            actions: [
-              cancelButton,
-      continueButton,
-            ],
-          );
-        },);
-
-    
-      } else {
-        setState(() {
-          addtoCartitems[index].quantity -= 1;
-        });
-      }
-    
-  }
-double calculateSubtotal() {
-  double subtotal = 0.0;
-  for (var item in addtoCartitems) {
-    subtotal += item.price * item.quantity;
-  }
-  return subtotal;
-}
-double calculateTotal() {
- double total = 0.0;
- total =calculateSubtotal() +deliveryCharges;
-  return total;
-}
+       return visibility; 
+    }
 
   @override
   Widget build(BuildContext context) {
@@ -94,44 +54,14 @@ double calculateTotal() {
               height: MediaQuery.of(context).size.height * 0.25,
               child: Image.asset("assets/images/cartbannerrs.png"),
             ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: addtoCartitems.length,
-                itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 2),
-                  child: Column(
-                    children: [
-                      ListTile(
-                        leading:  CircleAvatar(
-                          radius: 25,
-                          backgroundColor: Colors.amber,
-                           child: Image.asset(addtoCartitems[index].iconpath),
-                        ),
-                        title: Text(addtoCartitems[index].name ,style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),),
-                        subtitle: Text(addtoCartitems[index].price.toString() ,style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.w400),),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            TextButton(onPressed: (){
-                              decreaseQuantity(index);
-                            }, child: Image.asset("assets/images/minus.png")),
-                              SizedBox(
-                                width: 20,
-                                child: Text(addtoCartitems[index].quantity.toString())),
-                           TextButton(onPressed: (){
-                            increaseQuantity(index);
-                           }, child: Image.asset("assets/images/plus.png")),
-                          ],
-                        ),
-                      ),
-                      const Divider(color: Colors.black,)
-                    ],
-                  ),
-                );
-              },),
-            
-            ),
+            const CartitemsinList(),
+              
+               InkWell(
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ShowMoreCartItems(),)),
+                        child:  Visibility(
+                          visible: listlength(),
+                          child: const Text("Show More" ,style: TextStyle(color: MyColors.blueColor),))),
+                      const SizedBox(height: 10,),
           const CheckoutFunction()
         ],
       ),
