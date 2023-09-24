@@ -49,22 +49,22 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       items: items,
       height: 70,
       index: currentindex, // Set the initial selected index
-      onTap: (pageindex) {
+      onTap: (pageindex) async {
         setState(() {
           currentindex = pageindex;
         });
         if (pageindex ==0) {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
+       await   Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
         } else  if (pageindex ==1) {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoryScreenData(),));
+         await    Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoryScreenData(),));
         } 
         else  if (pageindex ==2) {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const FavouriteScreenData(),));
+         await    Navigator.push(context, MaterialPageRoute(builder: (context) => const FavouriteScreenData(),));
         } 
         else  if (pageindex ==3) {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),));
+          await   Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),));
         } 
-     
+       
       },
     );
   }

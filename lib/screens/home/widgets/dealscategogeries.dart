@@ -18,9 +18,48 @@ class _DealsOnFruitState extends State<DealsOnFruit> {
     });
   }
 
-  void addtocart(int index){
+  void addtocartsa(int index){
     addtoCartitems.add(AddedItems(price: deals[index].price, name: deals[index].description, quantity: deals[index].quantity, iconpath: deals[index].iconpath));
   }
+      void addtoCart(int index) {
+  // Check if the item already exists in the addtoCartitems list.
+  bool itemExists = addtoCartitems.any((item) =>
+      item.name == deals[index].description &&
+      item.price == deals[index].price);
+
+  if (itemExists) {
+    // Show a dialog if the item is already in the cart.
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("${deals[index].description} is Already in cart"),
+                    content: const Text("Do You Want To Remove From Cart?"),
+        actions: [ TextButton(onPressed: (){
+          Navigator.pop(context);
+        }, child: const Text("No")),
+        TextButton(onPressed: () async{
+          addtoCartitems.removeWhere((item) => item.name ==deals[index].description);
+          deals[index].isInCart = false;
+          Navigator.pop(context);
+        }, child: const Text("Yes"))],
+        );
+      },
+    );
+  } else {
+    // Add the item to the cart and update its `isInCart` property.
+    addtoCartitems.add(
+      AddedItems(
+        price: deals[index].price,
+        name: deals[index].description,
+        quantity: deals[index].quantity,
+        iconpath: deals[index].iconpath,
+      ),
+    );
+   deals[index].isInCart = true;
+  }
+}
+
   @override
   Widget build(BuildContext context) {
 _getDeals();
@@ -56,19 +95,26 @@ _getDeals();
                         children: [ 
                            
                           
-                          Stack(
-                                    children: [
-                                      const CircleAvatar(
-                                        radius: 12,
-                                        backgroundColor: Color(0xff2A4BA0),
-                                      ),
-                                      Positioned(
-                                        left: 6, top: 6,
-                                        child: SvgPicture.asset(
-                                            "assets/images/plus-outline (3) 1.svg",fit: BoxFit.cover,),
-                                      )
-                                    ],
-                                  ),
+                          InkWell(
+                            onTap: () {
+                              setState(() {
+                                addtoCart(index);
+                              });
+                            },
+                            child: Stack(
+                                      children: [
+                                        const CircleAvatar(
+                                          radius: 12,
+                                          backgroundColor: Color(0xff2A4BA0),
+                                        ),
+                                        Positioned(
+                                          left: 6, top: 6,
+                                          child: SvgPicture.asset(
+                                              "assets/images/plus-outline (3) 1.svg",fit: BoxFit.cover,),
+                                        )
+                                      ],
+                                    ),
+                          ),
                                   InkWell(
                            child:   Icon(Icons.favorite_rounded , color: deals[index].isFav==true ?const Color.fromARGB(255, 250, 0, 0) :Colors.grey,),
                                    

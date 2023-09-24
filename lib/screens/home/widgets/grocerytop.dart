@@ -36,8 +36,8 @@ class _HomeTopDataState extends State<HomeTopData> {
                   ),
                 ),
                 InkWell(
-                  onTap: () async=> 
-                 await Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),)),
+                  onTap: () async {
+                 await Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),));},
                   child: Stack(
   children: [
     SvgPicture.asset(
