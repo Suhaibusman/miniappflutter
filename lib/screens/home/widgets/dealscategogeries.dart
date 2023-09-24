@@ -129,8 +129,7 @@ _getDeals();
         deals[index].isFav = true;
         addtoFavourite(index);
       }
-      // Debug print to check the value of isFav
-      print("isFav: ${deals[index].isFav}");
+      
     });
   },
   icon: Icon(

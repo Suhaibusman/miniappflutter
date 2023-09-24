@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:miniapp/screens/checkoutpage/widgets/checkoutfunctions.dart';
+import 'package:miniapp/screens/checkoutpage/widgets/carddetails.dart';
+
 
 class AddCard extends StatefulWidget {
   const AddCard({super.key});
@@ -33,7 +34,7 @@ class _AddCardState extends State<AddCard> {
                 height: 242,
                 width: 335,
                 child: Image.asset("assets/images/carddetails.png")),
-              const CheckoutFunction(),
+              const CardFunc(),
 
           ],
         ),

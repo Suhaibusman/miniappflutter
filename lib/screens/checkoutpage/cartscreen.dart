@@ -62,7 +62,7 @@ class _CartScreenDataState extends State<CartScreenData> {
                           visible: listlength(),
                           child: const Text("Show More" ,style: TextStyle(color: MyColors.blueColor),))),
                       const SizedBox(height: 10,),
-          const CheckoutFunction()
+          const CheckoutFunction(buttonText: "Proceed to checkout")
         ],
       ),
       bottomNavigationBar: const CustomBottomNavigationBar( pageindex: 3),

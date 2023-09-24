@@ -29,7 +29,7 @@ class _ShowMoreCartItemsState extends State<ShowMoreCartItems> {
             ],
           ),
           const CartitemsinList(),
-          const CheckoutFunction()
+          const CheckoutFunction(buttonText: "Proceed to checkout")
           
         ],
       )

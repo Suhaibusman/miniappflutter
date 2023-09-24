@@ -4,17 +4,17 @@ import 'package:miniapp/screens/checkoutpage/checkoutpage.dart';
 import 'package:miniapp/widgets/buttons.dart';
 import 'package:miniapp/widgets/constant/colors.dart';
 
-class CheckoutFunction extends StatefulWidget {
-  final String buttonText;
-   const CheckoutFunction({
-    required this.buttonText,
+class CardFunc extends StatefulWidget {
+ 
+   const CardFunc({
+ 
     super.key});
 
   @override
-  State<CheckoutFunction> createState() => _CheckoutFunctionState();
+  State<CardFunc> createState() => _CardFuncState();
 }
 
-class _CheckoutFunctionState extends State<CheckoutFunction> {
+class _CardFuncState extends State<CardFunc> {
    num deliveryCharges =2.0;
   double calculateSubtotal() {
     
@@ -69,7 +69,7 @@ double calculateTotal() {
                         ],
                       ),
                       const SizedBox(height: 10,),
-                      CustomButtonWidget(buttonText: "Proceed to checkout", onPressed: (){
+                      CustomButtonWidget(buttonText: "Make Payment", onPressed: (){
                         
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const CheckoutScreen(),),);}, buttonHeight: 56, buttonWidth: 327, backgroundColor: MyColors.blueColor, fontColor: MyColors.onBoardText1, borderColor: MyColors.blueColor)
                       ,const SizedBox(height: 10,),
