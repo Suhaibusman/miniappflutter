@@ -19,29 +19,67 @@ class _CategoriesBarState extends State<CategoriesBar> {
       category = Categorypart.getCategorypart();
     });
   }
-  void addtoCart(int index){
-  addtoCartitems.add(AddedItems(price: category[index].categoryPrice, name: category[index].simplegetText, quantity: category[index].quantity, iconpath: category[index].iconpath));
+  void addtoCart(int index) {
+  // Check if the item already exists in the addtoCartitems list.
+  bool itemExists = addtoCartitems.any((item) =>
+      item.name == category[index].simplegetText &&
+      item.price == category[index].categoryPrice);
+
+  if (itemExists) {
+    // Show a dialog if the item is already in the cart.
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("${category[index].simplegetText} is Already in cart"),
+                    content: const Text("Do You Want To Remove From Cart?"),
+        actions: [ TextButton(onPressed: (){
+          Navigator.pop(context);
+        }, child: const Text("No")),
+        TextButton(onPressed: (){
+          addtoCartitems.removeAt(index);
+          Navigator.pop(context);
+        }, child: const Text("Yes"))],
+        );
+      },
+    );
+  } else {
+    // Add the item to the cart and update its `isInCart` property.
+    addtoCartitems.add(
+      AddedItems(
+        price: category[index].categoryPrice,
+        name: category[index].simplegetText,
+        quantity: category[index].quantity,
+        iconpath: category[index].iconpath,
+      ),
+    );
+    category[index].isInCart = true;
+  }
 }
 
-  void removeDuplicasy(index){
-    // for (var names in addtoCartitems) {
-    //   // ignore: unrelated_type_equality_checks
-    //   if (names == category[index].simplegetText) {
-    //     showDialog(context: context, builder: (context) {
-    //       return AlertDialog();
-    //     },);
-    //   } else {
-    //     addtoCart(index);
-    //   }
-    // }
+//   void addtoCart(int index){
+//   if (category[index].isInCart ==true) {
+//     showDialog(context: context, builder: (context) {
+//       return AlertDialog(
+//         title: Text("${category[index].simplegetText} is Already in cart"),
+        // content: const Text("Do You Want To Update Quantity ?"),
+        // actions: [ TextButton(onPressed: (){
+        //   Navigator.pop(context);
+        // }, child: const Text("No")),
+        // TextButton(onPressed: (){
+        //   addtoCartitems[index].quantity +=1;
+        //   Navigator.pop(context);
+        // }, child: const Text("Yes"))],
+//       );
+//     },);
+//   } if (category[index].isInCart ==false) {
+//     addtoCartitems.add(AddedItems(price: category[index].categoryPrice, name: category[index].simplegetText, quantity: category[index].quantity, iconpath: category[index].iconpath));
+// category[index].isInCart =true;
 
-    //  if (category[index].simplegetText ==addtoCartitems. ) {
-    //                                 print("object");
-    //                               } else {
-                                    
-    //                                addtoCart(index);
-    //                               }
-  }
+//   }
+// }
+
+ 
   @override
   Widget build(BuildContext context) {
     _getCategories();
@@ -129,9 +167,9 @@ class _CategoriesBarState extends State<CategoriesBar> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: (){
+                            onTap: () {
                            
-                            removeDuplicasy(index);
+                            addtoCart(index);
                              
                             },
                             child: Stack(
