@@ -36,7 +36,8 @@ class _HomeTopDataState extends State<HomeTopData> {
                   ),
                 ),
                 InkWell(
-                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),)),
+                  onTap: () async=> 
+                 await Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),)),
                   child: Stack(
   children: [
     SvgPicture.asset(
@@ -69,6 +70,7 @@ class _HomeTopDataState extends State<HomeTopData> {
 
                 )
               ],
+              
             ),
             Padding(
               padding: const EdgeInsets.only(top: 25, left: 20, right: 20),

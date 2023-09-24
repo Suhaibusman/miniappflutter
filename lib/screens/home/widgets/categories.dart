@@ -38,6 +38,7 @@ class _CategoriesBarState extends State<CategoriesBar> {
         }, child: const Text("No")),
         TextButton(onPressed: (){
           addtoCartitems.removeAt(index);
+          category[index].isInCart = false;
           Navigator.pop(context);
         }, child: const Text("Yes"))],
         );
@@ -168,8 +169,10 @@ class _CategoriesBarState extends State<CategoriesBar> {
                           ),
                           GestureDetector(
                             onTap: () {
-                           
+                           setState(() {
+                             
                             addtoCart(index);
+                           });
                              
                             },
                             child: Stack(
