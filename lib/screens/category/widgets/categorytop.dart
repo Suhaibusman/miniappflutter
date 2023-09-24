@@ -33,27 +33,35 @@ class CategoryTopBar extends StatelessWidget {
                InkWell(
                   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),)),
                   child: Stack(
-                    children:[ SvgPicture.asset(
-                      "assets/images/carticonwhite.svg",
-                      height: 24,
-                      width: 24,
-                      fit: BoxFit.cover,
-                    ),
-                     Positioned(
-                     
-                     left: 7,
-                     right: 2, 
-                     bottom: 10,
-                      child: CircleAvatar(radius: 9, backgroundColor: MyColors.darkYellowColor,
-                      child: Positioned(
-                      left: 7,bottom: 7,right: 7,
-                        child: Text(
-                          
-                         addtoCartitems.length.toString() ,style: const TextStyle(color: Colors.white, fontFamily: "Manrope",fontSize: 12,fontWeight: FontWeight.w600 ),)),
-                      ),
-                      )
-                    ]
-                  ),
+  children: [
+    SvgPicture.asset(
+      "assets/images/carticonwhite.svg",
+      height: 24,
+      width: 24,
+      fit: BoxFit.cover,
+    ),
+    Positioned(
+      top: 0, // Align to the top edge of the Stack
+      right: 0, // Align to the right edge of the Stac
+      child: CircleAvatar(
+        radius: 9,
+        backgroundColor: MyColors.darkYellowColor,
+        child: Center(
+          child: Text(
+            addtoCartitems.length.toString(),
+            style: const TextStyle(
+              color: Colors.white,
+              fontFamily: "Manrope",
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+      ),
+    )
+  ],
+)
+
                 )
               ],
             ),

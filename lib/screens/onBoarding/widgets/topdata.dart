@@ -52,7 +52,7 @@ List str2 =["1","2"];
                              Padding(
                           padding: const EdgeInsets.only(top: 8),
                           child: Align(
-                            alignment: Alignment.centerLeft,
+                            // alignment: Alignment.centerLeft,
                             child: Text(
                               "There's something for everyone to enjoy with Sweet Shop Favourites Screen ${str2[index]}",
                               style: const TextStyle(color: Color(0xffB2BBCE), fontSize: 18),

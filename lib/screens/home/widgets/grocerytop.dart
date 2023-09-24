@@ -21,6 +21,7 @@ class _HomeTopDataState extends State<HomeTopData> {
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Row(
               children: [
@@ -37,27 +38,35 @@ class _HomeTopDataState extends State<HomeTopData> {
                 InkWell(
                   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),)),
                   child: Stack(
-                    children:[ SvgPicture.asset(
-                      "assets/images/carticonwhite.svg",
-                      height: 24,
-                      width: 24,
-                      fit: BoxFit.cover,
-                    ),
-                     Positioned(
-                     
-                     left: 7,
-                     right: 2, 
-                     bottom: 10,
-                      child: CircleAvatar(radius: 9, backgroundColor: MyColors.darkYellowColor,
-                      child: Positioned(
-                      left: 7,bottom: 7,right: 7,
-                        child: Text(
-                          
-                         addtoCartitems.length.toString() ,style: const TextStyle(color: Colors.white, fontFamily: "Manrope",fontSize: 12,fontWeight: FontWeight.w600 ),)),
-                      ),
-                      )
-                    ]
-                  ),
+  children: [
+    SvgPicture.asset(
+      "assets/images/carticonwhite.svg",
+      height: 24,
+      width: 24,
+      fit: BoxFit.cover,
+    ),
+    Positioned(
+      top: 0, // Align to the top edge of the Stack
+      right: 0, // Align to the right edge of the Stac
+      child: CircleAvatar(
+        radius: 9,
+        backgroundColor: MyColors.darkYellowColor,
+        child: Center(
+          child: Text(
+            addtoCartitems.length.toString(),
+            style: const TextStyle(
+              color: Colors.white,
+              fontFamily: "Manrope",
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+      ),
+    )
+  ],
+)
+
                 )
               ],
             ),
@@ -105,26 +114,43 @@ class _HomeTopDataState extends State<HomeTopData> {
              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
               
-                const Text(
-                  "Green Way 3000, Sylhet",
-                  style: TextStyle(
-                      fontFamily: "Manrope",
-                      fontSize: 14,
-                      color: Color(0xffF8F9FB)),
+                 SizedBox(
+                  child: Row(
+                    children: [
+                      const Text(
+                        "Green Way 3000, Sylhet",
+                        style: TextStyle(
+                            fontFamily: "Manrope",
+                            fontSize: 14,
+                            color: Color(0xffF8F9FB)),
+                      ),
+                       Padding(
+                         padding: const EdgeInsets.only(left: 5),
+                         child: SvgPicture.asset("assets/images/arrow Iocn.svg",),
+                       ),
+                    ],
+                  ),
                 ),
-                SvgPicture.asset("assets/images/arrow Iocn.svg", fit: BoxFit.cover,),
                
-                const Text(
-                  "1 hour",
-                  style: TextStyle(
-                      fontFamily: "Manrope",
-                      fontSize: 14,
-                      color: Color(0xffF8F9FB)),
-                ),
-                Padding(
+               
+                SizedBox(
+                  child: Row(
+                    children: [
+                      const Text(
+                        "1 hour",
+                        style: TextStyle(
+                            fontFamily: "Manrope",
+                            fontSize: 14,
+                            color: Color(0xffF8F9FB)),
+                      ),
+                      Padding(
                   padding: const EdgeInsets.only(left: 5),
                   child: SvgPicture.asset("assets/images/arrow Iocn.svg",fit: BoxFit.cover,),
                 )
+                    ],
+                  ),
+                ),
+                
               ],
             ),
           ],

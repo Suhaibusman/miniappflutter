@@ -1,8 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:miniapp/Data/addtocartlist.dart';
 import 'package:miniapp/screens/category/models/categorydata.dart';
+import 'package:miniapp/screens/checkoutpage/cartscreen.dart';
 import 'package:miniapp/widgets/buttons.dart';
+import 'package:miniapp/widgets/constant/colors.dart';
 
 
 class ItemsDetailsPage extends StatefulWidget {
@@ -26,36 +29,59 @@ class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
       body: SafeArea(
           child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              InkWell(
-                onTap: () => Navigator.pop(context),
-                child: SvgPicture.asset(
-                  "assets/images/Group 73.svg",
-                  height: 40,
-                  width: 40,
+          // const SizedBox(height: 20,),
+          Padding(
+            padding: const EdgeInsets.only(left :20 ,right: 20 ,top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(
+                  onTap: () => Navigator.pop(context),
+                  child: SvgPicture.asset("assets/images/Group 73.svg"
+                  ,height: 40 ,width: 40,
+                  ),
                 ),
-              ),
-              Text(
-                widget.itemdeatils.itemname,
-                style: const TextStyle(
-                    fontFamily: "Manrope",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400),
-              ),
-              SvgPicture.asset(
-                "assets/images/Search Icon.svg",
-                colorFilter:
-                    const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                const Text("Items" ,style: TextStyle(fontFamily: "Manrope" ,fontSize: 16,fontWeight: FontWeight.w400),),
+                SvgPicture.asset("assets/images/Search Icon.svg" ,colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
                 // ,height: 18 ,width:  18,
-              ),
-              SvgPicture.asset(
-                "assets/images/Cart Icon.svg",
-                height: 24,
-                width: 24,
-              ),
-            ],
+                ),
+                InkWell(
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),)),
+                    child: Stack(
+  children: [
+    SvgPicture.asset(
+      "assets/images/carticonblack.svg",
+      height: 24,
+      width: 24,
+      fit: BoxFit.cover,
+    ),
+    Positioned(
+      top: 0, // Align to the top edge of the Stack
+      right: 0, // Align to the right edge of the Stac
+      child: CircleAvatar(
+        radius: 9,
+        backgroundColor: MyColors.darkYellowColor,
+        child: Center(
+          child: Text(
+            addtoCartitems.length.toString(),
+            style: const TextStyle(
+              color: Colors.white,
+              fontFamily: "Manrope",
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+      ),
+    )
+  ],
+)
+
+                  )
+          
+             
+              ],
+            ),
           ),
           SizedBox(
             height: 200,
@@ -235,17 +261,17 @@ class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
                    const SizedBox(
                     height: 20,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        "Reviews",
-                        style:
-                            TextStyle(color: Color(0xff1E222B), fontSize: 16),
-                      ),
-                      Image.asset("assets/images/Fill 4.png")
-                    ],
-                  ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     const Text(
+                  //       "Reviews",
+                  //       style:
+                  //           TextStyle(color: Color(0xff1E222B), fontSize: 16),
+                  //     ),
+                  //     Image.asset("assets/images/Fill 4.png")
+                  //   ],
+                  // ),
                 ],
               ),
             ),
