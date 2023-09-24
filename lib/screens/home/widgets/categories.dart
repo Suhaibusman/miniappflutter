@@ -36,8 +36,8 @@ class _CategoriesBarState extends State<CategoriesBar> {
         actions: [ TextButton(onPressed: (){
           Navigator.pop(context);
         }, child: const Text("No")),
-        TextButton(onPressed: () {
-          addtoCartitems.removeAt(index);
+        TextButton(onPressed: () async{
+          addtoCartitems.removeWhere((item) => item.name ==category[index].simplegetText);
           category[index].isInCart = false;
           Navigator.pop(context);
         }, child: const Text("Yes"))],
