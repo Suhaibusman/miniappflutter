@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miniapp/Data/addtocartlist.dart';
-import 'package:miniapp/screens/checkoutpage/checkoutpage.dart';
+import 'package:miniapp/screens/checkoutpage/orderscreen.dart';
 import 'package:miniapp/widgets/buttons.dart';
 import 'package:miniapp/widgets/constant/colors.dart';
 
@@ -71,7 +71,7 @@ double calculateTotal() {
                       const SizedBox(height: 10,),
                       CustomButtonWidget(buttonText: "Make Payment", onPressed: (){
                         
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const CheckoutScreen(),),);}, buttonHeight: 56, buttonWidth: 327, backgroundColor: MyColors.blueColor, fontColor: MyColors.onBoardText1, borderColor: MyColors.blueColor)
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const OrderScreen(),),);}, buttonHeight: 56, buttonWidth: 327, backgroundColor: MyColors.blueColor, fontColor: MyColors.onBoardText1, borderColor: MyColors.blueColor)
                       ,const SizedBox(height: 10,),
                       
                     ],
