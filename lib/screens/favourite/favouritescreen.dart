@@ -40,7 +40,7 @@ class _FavouriteScreenDataState extends State<FavouriteScreenData> {
                            child: Image.asset(favitemslist[index].iconpath),
                         ),
                         title: Text(favitemslist[index].name ,style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),),
-                        subtitle: Text(favitemslist[index].price ,style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.w400),),
+                        subtitle: Text(favitemslist[index].price.toString() ,style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.w400),),
                         trailing:  Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -48,8 +48,6 @@ class _FavouriteScreenDataState extends State<FavouriteScreenData> {
                             setState(() {
                               favitemslist.removeWhere((item) => item.name == favitemslist[index].name);
                           itemsdatanew[index]["isFav"] = false;
-                           // ||item.name == deals[index].description
-                            // deals[index].isFav =false;
                             });
                         }, icon: const Icon(Icons.favorite),
                         color: Colors.red,

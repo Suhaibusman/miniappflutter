@@ -20,7 +20,7 @@ class _DealsOnFruitState extends State<DealsOnFruit> {
   }
 
     void addtoFavourite(int index){
-  favitemslist.add(FavouriteitemsList(price: deals[index].price.toString(), name: deals[index].description, iconpath: deals[index].iconpath));
+  favitemslist.add(FavouriteitemsList(price: deals[index].price, name: deals[index].description, iconpath: deals[index].iconpath));
     
                                          
 }

@@ -55,14 +55,18 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         });
         if (pageindex ==0) {
        await   Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
+       setState(() {});
         } else  if (pageindex ==1) {
          await    Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoryScreenData(),));
+            setState(() {});
         } 
         else  if (pageindex ==2) {
          await    Navigator.push(context, MaterialPageRoute(builder: (context) => const FavouriteScreenData(),));
+             setState(() {});
         } 
         else  if (pageindex ==3) {
           await   Navigator.push(context, MaterialPageRoute(builder: (context) => const CartScreenData(),));
+            setState(() {});
         } 
        
       },

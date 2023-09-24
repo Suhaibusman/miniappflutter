@@ -1,6 +1,6 @@
 class FavouriteitemsList{
 
-  String price;
+  int price;
   String name;
   String iconpath;
 
