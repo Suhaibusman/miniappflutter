@@ -69,6 +69,11 @@ double calculateSubtotal() {
   }
   return subtotal;
 }
+double calculateTotal() {
+ double total = 0.0;
+ total =calculateSubtotal() +deliveryCharges;
+  return total;
+}
 
   @override
   Widget build(BuildContext context) {
@@ -149,7 +154,7 @@ double calculateSubtotal() {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text("Subtotal"),
-                          Text(calculateSubtotal().toString(),style: TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),)
+                          Text("\$${calculateSubtotal().toString()}",style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),)
                         ],
                       ),
                       const SizedBox(height: 10,),
@@ -157,15 +162,15 @@ double calculateSubtotal() {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text("Delivery"),
-                          Text(deliveryCharges.toString(),style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),)
+                          Text("\$${deliveryCharges.toString()}",style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),)
                         ],
                       ),
                       const SizedBox(height: 10,),
-                         const Row(
+                          Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Total"),
-                          Text("\$35.96",style: TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),)
+                          const Text("Total"),
+                          Text("\$${calculateTotal().toString()}",style: TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),)
                         ],
                       ),
                       const SizedBox(height: 10,),
