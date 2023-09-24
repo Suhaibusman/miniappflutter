@@ -31,30 +31,25 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           ),
 
           const Text("Delivery Address"),
-          Container(
+          const Column(
+            children: [
+              Row( 
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                Text("Home"),
+                Icon(Icons.check_circle ,color: MyColors.darkYellowColor,) ,
 
-            child: const Column(
-              children: [
-                Row( 
-                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                  Text("Home"),
-                  Icon(Icons.check_circle ,color: MyColors.darkYellowColor,) ,
-
-                ],),
-                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                   children: [
-                  Text("35 green way, Sunamganj"),
-                  Text("Edit"),
-                  
-                ],)
-              ],
-            ),
+              ],),
+               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: [
+                Text("35 green way, Sunamganj"),
+                Text("Edit"),
+                
+              ],)
+            ],
           ),
-            Container(
-
-            child: const Column(
+            const Column(
               children: [
                 Row( 
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,7 +68,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
              
               ],
             ),
-          ),
            CustomButtonWidget(buttonText: "Add New Address", onPressed: (){}, buttonHeight: 30, buttonWidth: 179, backgroundColor: Colors.transparent, fontColor: MyColors.blueColor, borderColor: Colors.transparent),
            CustomButtonWidget(buttonText: "Add Card", onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => const AddCard(),));

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miniapp/Data/favouriteitems.dart';
+import 'package:miniapp/models/deals_part.dart';
 import 'package:miniapp/screens/category/models/categorydata.dart';
 import 'package:miniapp/screens/navbar/bottomnavigation.dart';
 
@@ -12,8 +13,15 @@ class FavouriteScreenData extends StatefulWidget {
 }
 
 class _FavouriteScreenDataState extends State<FavouriteScreenData> {
+     List<DealsPart> deals=[];
+  void _getDeals() {
+    setState(() {
+      deals = DealsPart.getDeals();
+    });
+  }
   @override
   Widget build(BuildContext context) {
+    _getDeals();
     return  Scaffold(
     
       body: 
@@ -38,9 +46,13 @@ class _FavouriteScreenDataState extends State<FavouriteScreenData> {
                           children: [
                         IconButton(onPressed: (){
                             setState(() {
-                              favitemslist.removeWhere((item) => item.name == itemsdatanew[index]["name"]);
+                              favitemslist.removeWhere((item) => item.name == favitemslist[index].name
+                              
+                              // ||item.name == deals[index].description
+                              
+                              );
                           itemsdatanew[index]["isFav"] = false;
-
+                            // deals[index].isFav =false;
                             });
                         }, icon: const Icon(Icons.favorite),
                         color: Colors.red,

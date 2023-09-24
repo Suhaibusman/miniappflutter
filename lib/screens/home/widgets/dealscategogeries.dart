@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:miniapp/Data/addtocartlist.dart';
+import 'package:miniapp/Data/favouriteitems.dart';
 import 'package:miniapp/models/deals_part.dart';
 
 class DealsOnFruit extends StatefulWidget {
@@ -18,7 +19,11 @@ class _DealsOnFruitState extends State<DealsOnFruit> {
     });
   }
 
-
+    void addtoFavourite(int index){
+  favitemslist.add(FavouriteitemsList(price: deals[index].price, name: deals[index].description, iconpath: deals[index].iconpath));
+    
+                                         
+}
       void addtoCart(int index) {
   // Check if the item already exists in the addtoCartitems list.
   bool itemExists = addtoCartitems.any((item) =>
@@ -113,18 +118,22 @@ _getDeals();
                                       ],
                                     ),
                           ),
-                                  InkWell(
-                           child:   Icon(Icons.favorite_rounded , color: deals[index].isFav==true ?const Color.fromARGB(255, 250, 0, 0) :Colors.grey,),
-                                   
-                            onTap: (){
-                                       setState(() {
-                                        if (deals[index].isFav==true) {
-                                          deals[index].isFav=false;
-                                        } else {
-                                          deals[index].isFav=true;
-                                        }
-                                      });
-                                    }, )
+                                   IconButton(onPressed: (){
+                                        setState(() {
+                                          if (deals[index].isFav==true) {
+                                            deals[index].isFav=false;
+                                            favitemslist.removeWhere((item) => item.name == 
+                                            deals[index].description
+                                            );
+                                          } else {
+                                            deals[index].isFav=true;
+                                             addtoFavourite(index);
+                                          }
+                                        });
+
+                                          
+                                      }, icon:  Icon(Icons.favorite_rounded ,
+                                      color: deals[index].isFav==true ?const Color.fromARGB(255, 250, 0, 0) :Colors.grey,))
                                   ,
                                   ],
                       )
