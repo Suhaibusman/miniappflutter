@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miniapp/Data/addtocartlist.dart';
+import 'package:miniapp/screens/checkoutpage/trackorderscreen.dart';
 import 'package:miniapp/widgets/buttons.dart';
 import 'package:miniapp/widgets/constant/colors.dart';
 
@@ -50,7 +51,11 @@ class _OrderScreenState extends State<OrderScreen> {
                                   fontSize: 20,
                                   fontFamily: "Manrope",
                                   fontWeight: FontWeight.bold),),
-                                    CustomButtonWidget(buttonText: "Track Order", onPressed: (){}, buttonHeight: 56, buttonWidth: 120, backgroundColor: MyColors.darkBlueColor, fontColor: Colors.white, borderColor: Colors.transparent)
+                                    CustomButtonWidget(buttonText: "Track Order", onPressed: (){
+                                      setState(() {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => const TrackOrder(),));
+                                      });
+                                    }, buttonHeight: 56, buttonWidth: 120, backgroundColor: MyColors.darkBlueColor, fontColor: Colors.white, borderColor: Colors.transparent)
                                   
                               ],
                             ),
