@@ -202,7 +202,7 @@ void addtoFavourite(int index){
                                         setState(() {
                                           if (itemsdatanew[index]["isFav"]==true) {
                                             itemsdatanew[index]["isFav"]=false;
-                                            favitemslist.removeAt(index);
+                                            favitemslist.removeWhere((item) => item.name == itemsdatanew[index]["name"]);
                                           } else {
                                             itemsdatanew[index]["isFav"]=true;
                                             addtoFavourite(index);

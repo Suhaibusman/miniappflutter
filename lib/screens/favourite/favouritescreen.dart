@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:miniapp/Data/favouriteitems.dart';
+import 'package:miniapp/screens/category/models/categorydata.dart';
 import 'package:miniapp/screens/navbar/bottomnavigation.dart';
 
 
@@ -32,16 +33,18 @@ class _FavouriteScreenDataState extends State<FavouriteScreenData> {
                         ),
                         title: Text(favitemslist[index].name ,style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.bold),),
                         subtitle: Text(favitemslist[index].price ,style: const TextStyle(fontFamily: "Manrope" ,fontSize: 14 ,color: Color(0xff1E222B), fontWeight: FontWeight.w400),),
-                        trailing: const Row(
+                        trailing:  Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                          //   TextButton(onPressed: (){
-                          //     decreaseQuantity(index);
-                          //   }, child: Image.asset("assets/images/minus.png")),
-                          //     Text(favitemslist[index].quantity.toString()),
-                          //  TextButton(onPressed: (){
-                          //   increaseQuantity(index);
-                          //  }, child: Image.asset("assets/images/plus.png")),
+                        IconButton(onPressed: (){
+                            setState(() {
+                              favitemslist.removeWhere((item) => item.name == itemsdatanew[index]["name"]);
+                          itemsdatanew[index]["isFav"] = false;
+
+                            });
+                        }, icon: const Icon(Icons.favorite),
+                        color: Colors.red,
+                        )
                           ],
                         ),
                       ),
