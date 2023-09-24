@@ -44,6 +44,12 @@ class _DealsOnFruitState extends State<DealsOnFruit> {
         TextButton(onPressed: () async{
           addtoCartitems.removeWhere((item) => item.name ==deals[index].description);
           deals[index].isInCart = false;
+           ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(
+      "${deals[index].description} is remove from Cart"
+    ),
+    duration: const Duration(seconds: 1),),
+  );
           Navigator.pop(context);
         }, child: const Text("Yes"))],
         );
@@ -64,7 +70,8 @@ class _DealsOnFruitState extends State<DealsOnFruit> {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(content: Text(
       "${deals[index].description} is added to Cart"
-    )),
+    ),
+    duration: const Duration(seconds: 1),),
   );
   }
 }

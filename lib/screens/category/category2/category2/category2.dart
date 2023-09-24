@@ -63,7 +63,8 @@ Navigator.push(context, MaterialPageRoute(builder: (context) =>
                    ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(content: Text(
       "${itemsdatanew[index]["name"]} is remove from Cart"
-    )),
+    ),
+    duration: const Duration(seconds: 1),),
   );
           Navigator.pop(context);
         }, child: const Text("Yes"))],
@@ -84,14 +85,21 @@ Navigator.push(context, MaterialPageRoute(builder: (context) =>
                       ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(content: Text(
       "${itemsdatanew[index]["name"]} is added to Cart"
-    )),
+    ),
+    duration: const Duration(seconds: 1),),
   );
   }
 }
   
 void addtoFavourite(int index){
   favitemslist.add(FavouriteitemsList(price: itemsdatanew[index]["price"], name: itemsdatanew[index]["name"], iconpath: itemsdatanew[index]["image"][2]));
-    
+                       ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(
+      "${itemsdatanew[index]["name"]} is added to favourite"
+    ),
+    duration: const Duration(seconds: 1),),
+
+  );
                                          
 }
 

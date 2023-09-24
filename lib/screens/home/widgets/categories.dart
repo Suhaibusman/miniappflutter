@@ -42,7 +42,8 @@ class _CategoriesBarState extends State<CategoriesBar> {
               ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(content: Text(
       "${category[index].simplegetText} is remove from cart"
-    )),
+    ),
+    duration: const Duration(seconds: 1),),
   );
           Navigator.pop(context);
           
@@ -64,7 +65,8 @@ class _CategoriesBarState extends State<CategoriesBar> {
     ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(content: Text(
       "${category[index].simplegetText} is added to Cart"
-    )),
+    ),
+    duration: const Duration(seconds: 1),),
   );
   }
 }
