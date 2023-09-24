@@ -8,10 +8,10 @@ class Itemsdatanew{
   String    reviews;
   int quantity;
   bool isFav;   
-
+   bool isInCart; 
 Itemsdatanew({
   required this.itemname,
-  
+  required this.isInCart,
   required this.categoryDetails,
   required this.itemprice,
   

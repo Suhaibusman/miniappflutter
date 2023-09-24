@@ -3,7 +3,7 @@ class CategoryData{
   
   String categoryiconpath;
   String categoryDetails;
-  
+  bool isInCart;
   String subcategoryName; 
   List  subcategoryImages;
   String?    subCategoryiconpath;
@@ -12,7 +12,7 @@ class CategoryData{
 
 CategoryData({
   required this.categoryName,
-  
+  required this.isInCart,
   required this.categoryDetails,
   required this.categoryiconpath,
    required this.subcategoryName,
@@ -28,7 +28,7 @@ CategoryData({
     'category': "McDonalds",
     'image': "assets/images/CategoryandSub/categoryimages/icons8-part-alternation-mark-68.png",
     'details': "Karachi",
-    
+    'isInCart': false,
     'subcategories': [
       {
         'subcategory': [
@@ -87,6 +87,7 @@ CategoryData({
     'category': "KFC",
     'image': "assets/images/CategoryandSub/categoryimages/icons8-kfc-chicken-68.png",
     'details': "Karachi",
+    'isInCart': false,
     'subcategories': [
       {
         'subcategory': [
@@ -145,6 +146,7 @@ CategoryData({
     'category': "Subway",
     'image': "assets/images/CategoryandSub/categoryimages/icons8-part-alternation-mark-68.png",
     'details': "Karachi",
+    'isInCart': false,
     'subcategories': [
       {
         'subcategory': [
@@ -203,6 +205,7 @@ CategoryData({
     'category': "Pizza",
     'image': "assets/images/CategoryandSub/categoryimages/icons8-part-alternation-mark-68.png",
     'details': "Karachi",
+    'isInCart': false,
     'subcategories': [
       {
         'subcategory': [

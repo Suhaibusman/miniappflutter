@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:miniapp/Data/addtocartlist.dart';
 import 'package:miniapp/Data/favouriteitems.dart';
-import 'package:miniapp/Data/products_data.dart';
+
 
 import 'package:miniapp/screens/category/category2/catitems.dart';
 import 'package:miniapp/screens/category/models/categorydata.dart';
@@ -35,34 +35,11 @@ void navigatetoitemdetails(int index){
 
 Navigator.push(context, MaterialPageRoute(builder: (context) =>
 
-  ItemsDetailsPage( itemdeatils: Itemsdatanew(itemname: itemsdatanew[index]["name"], categoryDetails: itemsdatanew[index]["details"], itemprice: itemsdatanew[index]["price"], itemimages: itemsdatanew[index]["image"], reviews: itemsdatanew[index]["reviews"], isFav: itemsdatanew[index]["isFav"] , quantity: itemsdatanew[index]["quantity"])),
+  ItemsDetailsPage( itemdeatils: Itemsdatanew(itemname: itemsdatanew[index]["name"], categoryDetails: itemsdatanew[index]["details"], itemprice: itemsdatanew[index]["price"], itemimages: itemsdatanew[index]["image"], reviews: itemsdatanew[index]["reviews"], isFav: itemsdatanew[index]["isFav"] , quantity: itemsdatanew[index]["quantity"] , isInCart: itemsdatanew[index]["isInCart"])),
  
 ),);
 }
-  void addtoCartitemss(int index){
-    bool itemExsist =false;
-for (var i = 0; i < cartItems.length; i++) {
-  if (cartItems[i]["name"]==itemsdatanew[index]["name"]) {
-      itemExsist=true;
-      
-    showDialog(context: context, builder: (context) {
-      return AlertDialog(
-        title: Text("${itemsdatanew[index]["name"]} is Already in Cart, Do U Want To Update Quantity" ),
-
-      );
-    
-
-    },
-    
-    
-    );
-  } if(!itemExsist) {
-    addtoCartitems.add(AddedItems(price: itemsdatanew[index]["price"], name: itemsdatanew[index]["name"], quantity: itemsdatanew[index]["quantity"], iconpath: itemsdatanew[index]["image"][2]));
-  }
-}
-
-  
-}
+ 
   void addtoCart(int index) {
   // Check if the item already exists in the addtoCartitems list.
   bool itemExists = addtoCartitems.any((item) =>

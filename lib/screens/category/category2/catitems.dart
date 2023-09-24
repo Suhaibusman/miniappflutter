@@ -22,6 +22,45 @@ class ItemsDetailsPage extends StatefulWidget {
 
 class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
   final PageController _pageController = PageController();
+  void addtoCart() {
+  // Check if the item already exists in the addtoCartitems list.
+  bool itemExists = addtoCartitems.any((item) =>
+      item.name ==  widget.itemdeatils.itemname &&
+      item.price ==  widget.itemdeatils.itemprice);
+
+  if (itemExists) {
+    // Show a dialog if the item is already in the cart.
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text("${ widget.itemdeatils.itemname} is Already in cart"),
+                    content: const Text("Do You Want To Remove From Cart?"),
+        actions: [ TextButton(onPressed: (){
+          Navigator.pop(context);
+        }, child: const Text("No")),
+        TextButton(onPressed: () async{
+          addtoCartitems.removeWhere((item) => item.name == widget.itemdeatils.itemname);
+         widget.itemdeatils.isInCart = false;
+          Navigator.pop(context);
+        }, child: const Text("Yes"))],
+        );
+      },
+    );
+  } else {
+    // Add the item to the cart and update its `isInCart` property.
+    addtoCartitems.add(
+      AddedItems(
+        price:  widget.itemdeatils.itemprice,
+        name:  widget.itemdeatils.itemname,
+        quantity:  widget.itemdeatils.quantity,
+        iconpath:  widget.itemdeatils.itemimages[2],
+      ),
+    );
+      widget.itemdeatils.isInCart= true;
+  }
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -205,7 +244,9 @@ class _ItemsDetailsPageState extends State<ItemsDetailsPage> {
                     children: [
                       CustomButtonWidget(
                         buttonText: "Add to Cart",
-                        onPressed: () {},
+                        onPressed: () {
+                           addtoCart();
+                        },
                         buttonHeight: 56,
                         buttonWidth: 143,
                         backgroundColor: Colors.transparent,
