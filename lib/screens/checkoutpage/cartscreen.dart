@@ -118,7 +118,7 @@ class _CartScreenDataState extends State<CartScreenData> {
               },),
             
             ),
-            Container(height: 256,
+            Container(
               decoration: const BoxDecoration(
                 color: Color(0xffF8F9FB),
                 borderRadius: BorderRadius.only(
@@ -128,7 +128,7 @@ class _CartScreenDataState extends State<CartScreenData> {
                 child:  Padding(
                   padding: const EdgeInsets.only(left: 40,right: 40 ,top: 20),
                   child: Column(
-                    
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       InkWell(
                         onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ShowMoreCartItems(),)),
@@ -161,7 +161,7 @@ class _CartScreenDataState extends State<CartScreenData> {
                       CustomButtonWidget(buttonText: "Proceed to checkout", onPressed: (){
                         
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const CheckoutScreen(),),);}, buttonHeight: 56, buttonWidth: 327, backgroundColor: MyColors.blueColor, fontColor: MyColors.onBoardText1, borderColor: MyColors.blueColor)
-
+                      ,const SizedBox(height: 10,),
                       
                     ],
                   ),
